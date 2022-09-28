@@ -1,15 +1,15 @@
-﻿using AIE;
+﻿using System;
 
-class Program
+namespace AIE
 {
-     static void main(string[] args)
+    class Program
     {
-      float quad = MathsFormulas.BasicQuadratic(5.0f);
-        
-        float sqrtofFour=(float)Math.Sqrt(4);
+        static void Main()
+        {
+            MathsFormulas.QuadraticRoots roots = new MathsFormulas.QuadraticRoots();
+            roots = MathsFormulas.QuadraticEquation(1f, 0f, -1f);
 
-        MathsFormulas.QuadraticRoots roots = MathsFormulas.GetQuadraticRoots(1, -5, 4);
-        
-        return;
+            return;
+        }
     }
 }
