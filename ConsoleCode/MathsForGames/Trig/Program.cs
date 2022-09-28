@@ -1,153 +1,119 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Raylib_cs;
+using static Raylib_cs.Raylib;
+using static Raylib_cs.Color;
+using System.Numerics;
 
-namespace MathLibrary
+public class Program
 {
-    public struct Vector4
+
+    public static void DrawCircle(int centerX, int centerY, int radius, Color color, int lineSegments = 24)
     {
-        public float x, y, z, w;
+        //how many lines make up this circle
 
-        //4 param constructor
-        public Vector4(float x, float y, float z, float w)
+        //angle between each corner of the circle
+        float stepSize = (2 * MathF.PI) / lineSegments;
+
+
+        //generate the "circle"
+        for (int i = 0; i < lineSegments; i++)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
+            int startPointX = (int)(radius * MathF.Cos(i * stepSize));
+            int startPointY = (int)(radius * MathF.Sin(i * stepSize));
+
+            int endPointX = (int)(radius * MathF.Cos(stepSize * (i + 1)));
+            int endPointY = (int)(radius * MathF.Sin(stepSize * (i + 1)));
+
+            //Raylib.DrawCircle(centerX + startPointX, centerY + startPointY, 1.0f, Color.BLUE);
+            Raylib.DrawLine(centerX + startPointX, centerY + startPointY, centerY + endPointX, centerY + endPointY, color);
         }
+    }
 
-        public float Magnitude
+    public static int[] GetCirclePoints(int centerX, int centerY, int radius, int lineSegments, float offset = 0.0f)
+    {
+        int[] points = new int[lineSegments * 2];
+
+        //angle between each corner of the circle
+        float stepSize = (2 * MathF.PI) / lineSegments;
+
+
+        //generate the "circle"
+        for (int i = 0; i < lineSegments; i++)
         {
-            get
+            int startPointX = (int)(radius * MathF.Cos(i * stepSize + offset));
+            int startPointY = (int)(radius * MathF.Sin(i * stepSize + offset));
+
+            points[(i * 2)] = startPointX + centerX;
+            points[(i * 2) + 1] = startPointY + centerY;
+        }
+        return points;
+    }
+
+    public static int Main()
+    {
+        //initialize
+        const int screenWidth = 800;
+        const int screenHeight = 450;
+
+        Raylib.InitWindow(screenWidth, screenHeight, "Trig in Raylib");
+        Raylib.SetTargetFPS(60);
+
+        Texture2D texDog = Raylib.LoadTexture(@"res/dog.png");
+
+        float linePosX = screenWidth / 2;
+        float linePosY = screenHeight / 2;
+
+        float angle = 0.0f;
+
+
+        Vector2 initialPos = new Vector2();
+        initialPos.X = linePosX;
+        initialPos.Y = linePosY;
+
+        Vector2 finalPos = new Vector2();
+        finalPos.X = linePosX;
+        finalPos.Y = linePosY;
+
+
+        //game loop
+        while (!Raylib.WindowShouldClose())
+        {
+            //update
+            angle += Raylib.GetFrameTime();
+
+            float offsetX = MathF.Sin(angle);
+            float offsetY = MathF.Cos(angle);
+
+            finalPos.X += offsetX;
+            finalPos.Y += offsetY;
+
+            int[] points = GetCirclePoints(200, 200, 60, 4, (float)Raylib.GetTime());
+
+            //spawning a circle
+
+            //draw
+            //drawing objects to the screen
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.RAYWHITE);
+
+            Raylib.DrawLine((int)initialPos.X, (int)initialPos.Y, (int)finalPos.X, (int)finalPos.Y, Color.BLACK);
+
+            DrawCircle(200, 200, 60, Color.ORANGE);
+
+            for (int i = 0; i < points.Length / 2; i++)
             {
-                return MathF.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
+                Raylib.DrawCircle(points[i * 2], points[(i * 2) + 1], 10, Color.BROWN);
             }
+
+            Raylib.EndDrawing();
+
+            initialPos.X += offsetX;
+            initialPos.Y += offsetY;
         }
 
-        public void Normalize()
-        {
-            x = x / Magnitude;
-            y = y / Magnitude;
-            z = z / Magnitude;
-            w = w / Magnitude;
-        }
+        //deinitialize
+        //aka cleanup
+        Raylib.CloseWindow();
 
-        public Vector4 Normalized
-        {
-            get
-            {
-                return new Vector4(x / Magnitude, y / Magnitude, z / Magnitude, w / Magnitude);
-            }
-        }
-
-        public void Scale(Vector4 rhs)
-        {
-            x = rhs.x * x;
-            y = rhs.y * y;
-            z = rhs.z * z;
-            w = rhs.w * w;
-        }
-
-        public Vector4 Scaled(Vector4 rhs)
-        {
-            return new Vector4(rhs.x * x, rhs.y * y, rhs.z * z, rhs.w * w);
-        }
-
-        //returns the dot product of 2 Vector4s
-        public float Dot(Vector4 rhs)
-        {
-            return (this.x * rhs.x) + (this.y * rhs.y) + (this.z * rhs.z) + (this.w * rhs.w);
-        }
-
-        //returns the cross product of two Vector4s by finding the cross product of the 3rd Dimension subspaces of the Vector4s 
-        public Vector4 Cross(Vector4 rhs)
-        {
-            return new Vector4((this.y * rhs.z) - (this.z * rhs.y),
-                                (this.x * rhs.z) - (this.z * rhs.x),
-                                (this.x * rhs.y) - (this.y * rhs.x), 0);
-        }
-
-        #region Operators
-        //  addition
-        public static Vector4 operator +(Vector4 lhs, Vector4 rhs)
-        {
-            Vector4 result = new Vector4();
-            result.x = lhs.x + rhs.x;
-            result.y = lhs.y + rhs.y;
-            result.z = lhs.z + rhs.z;
-            result.w = lhs.w + rhs.w;
-
-            return result;
-        }
-        //  subtraction
-        public static Vector4 operator -(Vector4 lhs, Vector4 rhs)
-        {
-            Vector4 result = new Vector4();
-            result.x = lhs.x - rhs.x;
-            result.y = lhs.y - rhs.y;
-            result.z = lhs.z - rhs.z;
-            result.w = lhs.w - rhs.w;
-
-            return result;
-        }
-        //  negation
-        public static Vector4 operator -(Vector4 rhs)
-        {
-            Vector4 result = new Vector4();
-            result.x = -1 * rhs.x;
-            result.y = -1 * rhs.y;
-            result.z = -1 * rhs.z;
-            result.w = -1 * rhs.w;
-
-            return result;
-        }
-        public static Vector4 operator *(Vector4 lhs, float rhs)
-        {
-            return new Vector4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
-        }
-        public static Vector4 operator *(float lhs, Vector4 rhs)
-        {
-            return new Vector4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
-        }
-        public static Vector4 operator /(Vector4 lhs, float rhs)
-        {
-            return new Vector4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
-        }
-
-        //equality comparisons
-        //  ==
-        public static bool operator ==(Vector4 lhs, Vector4 rhs)
-        {
-            //if the difference of each component is less than twice the float.Epsilon, consider them equal
-            if (MathF.Abs(lhs.x - rhs.x) < (float.Epsilon)
-                && MathF.Abs(lhs.y - rhs.y) < (float.Epsilon)
-                && MathF.Abs(lhs.z - rhs.z) < (float.Epsilon)
-                && MathF.Abs(lhs.w - rhs.w) < (float.Epsilon))
-            {
-                return true;
-            }
-            //otherwise, they are not equal
-            else
-            {
-                return false;
-            }
-        }
-
-        //  !=
-        public static bool operator !=(Vector4 lhs, Vector4 rhs)
-        {
-            return !(lhs == rhs);
-        }
-
-        #endregion
-
-        //ToString() override
-        public override string ToString()
-        {
-            return "{ " + x + "(x) " + y + "(y) " + z + "(z) " + w + "(w) }";
-        }
+        return 0;
     }
 }
