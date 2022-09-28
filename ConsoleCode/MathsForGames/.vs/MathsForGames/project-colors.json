@@ -10,7 +10,22 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "c5cb29ec-fdaf-47bf-9c87-bf1b607401ae": {
+      "ProjectGuid": "c5cb29ec-fdaf-47bf-9c87-bf1b607401ae",
+      "DisplayName": "MathLibrary",
+      "ColorIndex": 1
+    },
+    "8395e3a9-f86a-4381-b0b7-dfa1aa220d8c": {
+      "ProjectGuid": "8395e3a9-f86a-4381-b0b7-dfa1aa220d8c",
+      "DisplayName": "Trig",
+      "ColorIndex": 2
+    },
+    "7fafc4f2-61c0-4a8c-9b38-dee471c8b1e4": {
+      "ProjectGuid": "7fafc4f2-61c0-4a8c-9b38-dee471c8b1e4",
+      "DisplayName": "MathLibraryTest",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 4
 }
