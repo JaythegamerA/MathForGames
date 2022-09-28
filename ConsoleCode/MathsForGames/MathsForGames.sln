@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathsFormulas", "MathsFormu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLibrary", "MathLibrary\MathLibrary.csproj", "{C5CB29EC-FDAF-47BF-9C87-BF1B607401AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trig", "Trig\Trig.csproj", "{8395E3A9-F86A-4381-B0B7-DFA1AA220D8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C5CB29EC-FDAF-47BF-9C87-BF1B607401AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5CB29EC-FDAF-47BF-9C87-BF1B607401AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5CB29EC-FDAF-47BF-9C87-BF1B607401AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8395E3A9-F86A-4381-B0B7-DFA1AA220D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8395E3A9-F86A-4381-B0B7-DFA1AA220D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8395E3A9-F86A-4381-B0B7-DFA1AA220D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8395E3A9-F86A-4381-B0B7-DFA1AA220D8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
