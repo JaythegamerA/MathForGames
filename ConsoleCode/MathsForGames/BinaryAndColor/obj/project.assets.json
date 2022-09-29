@@ -124,11 +124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
-      "projectName": "Trig",
-      "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+      "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\BinaryAndColor\\BinaryAndColor.csproj",
+      "projectName": "BinaryAndColor",
+      "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\BinaryAndColor\\BinaryAndColor.csproj",
       "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\obj\\",
+      "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\BinaryAndColor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",
