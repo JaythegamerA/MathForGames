@@ -1,0 +1,6 @@
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\obj\Debug\net6.0\MathLibraryTest.csproj.AssemblyReference.cache
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\obj\Debug\net6.0\MathLibraryTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\obj\Debug\net6.0\MathLibraryTest.AssemblyInfoInputs.cache
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\obj\Debug\net6.0\MathLibraryTest.AssemblyInfo.cs
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibraryTest\obj\Debug\net6.0\MathLibraryTest.csproj.CoreCompileInputs.cache

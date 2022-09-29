@@ -1,0 +1,5 @@
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibrary\obj\Debug\net6.0\MathLibrary.csproj.AssemblyReference.cache
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibrary\obj\Debug\net6.0\MathLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibrary\obj\Debug\net6.0\MathLibrary.AssemblyInfoInputs.cache
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibrary\obj\Debug\net6.0\MathLibrary.AssemblyInfo.cs
+C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\MathLibrary\obj\Debug\net6.0\MathLibrary.csproj.CoreCompileInputs.cache
