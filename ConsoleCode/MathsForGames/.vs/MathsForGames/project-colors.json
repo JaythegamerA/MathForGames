@@ -25,7 +25,17 @@
       "ProjectGuid": "7fafc4f2-61c0-4a8c-9b38-dee471c8b1e4",
       "DisplayName": "MathLibraryTest",
       "ColorIndex": 3
+    },
+    "a410197b-c9e6-4c24-b0d2-318f389119fe": {
+      "ProjectGuid": "a410197b-c9e6-4c24-b0d2-318f389119fe",
+      "DisplayName": "BinaryAndColor",
+      "ColorIndex": 4
+    },
+    "92d4f96d-2e0a-4f6f-bd7b-0715bd67c069": {
+      "ProjectGuid": "92d4f96d-2e0a-4f6f-bd7b-0715bd67c069",
+      "DisplayName": "Vectors",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

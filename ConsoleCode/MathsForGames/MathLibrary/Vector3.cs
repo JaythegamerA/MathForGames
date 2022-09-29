@@ -60,7 +60,9 @@ namespace MathLibrary
         //returns the cross product of two Vector3s
         public Vector3 Cross(Vector3 rhs)
         {
-            return new Vector3((this.y * rhs.z) - (this.z * rhs.y), (this.x * rhs.z) - (this.z * rhs.x), (this.x * rhs.y) - (this.y * rhs.x));
+            return new Vector3((this.y * rhs.z) - (this.z * rhs.y),
+                                (this.z * rhs.x) - (this.x * rhs.z),
+                                (this.x * rhs.y) - (this.y * rhs.x));
         }
 
         #region Operators

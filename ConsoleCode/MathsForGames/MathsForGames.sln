@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLibraryTest", "MathLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAndColor", "BinaryAndColor\BinaryAndColor.csproj", "{A410197B-C9E6-4C24-B0D2-318F389119FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vectors", "Vectors\Vectors.csproj", "{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A410197B-C9E6-4C24-B0D2-318F389119FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A410197B-C9E6-4C24-B0D2-318F389119FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A410197B-C9E6-4C24-B0D2-318F389119FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,10 +29,7 @@ namespace MathLibrary
 
         public void Normalize()
         {
-            x = x / Magnitude;
-            y = y / Magnitude;
-            z = z / Magnitude;
-            w = w / Magnitude;
+            this /= Magnitude;
         }
 
         public Vector4 Normalized
@@ -66,7 +63,7 @@ namespace MathLibrary
         public Vector4 Cross(Vector4 rhs)
         {
             return new Vector4((this.y * rhs.z) - (this.z * rhs.y),
-                                (this.x * rhs.z) - (this.z * rhs.x),
+                                (this.z * rhs.x) - (this.x * rhs.z),
                                 (this.x * rhs.y) - (this.y * rhs.x), 0);
         }
 
