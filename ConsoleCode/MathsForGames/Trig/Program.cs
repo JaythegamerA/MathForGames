@@ -93,11 +93,11 @@ public class Program
             //draw
             //drawing objects to the screen
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Color.RAYWHITE);
+            Raylib.ClearBackground(Color.DARKGRAY);
 
             Raylib.DrawLine((int)initialPos.X, (int)initialPos.Y, (int)finalPos.X, (int)finalPos.Y, Color.BLACK);
 
-            DrawCircle(200, 200, 60, Color.ORANGE);
+            DrawCircle(200, 200, 60, Color.RED);
 
             for (int i = 0; i < points.Length / 2; i++)
             {
