@@ -8,89 +8,67 @@ namespace AIE
 {
     public static class MathsFormulas
     {
-        //problem A - Basic Quadratic
-        public static float QuadraticFunction(float x)
+        // Problem A - Basic Quadratic
+        public static float BasicQuadratic(float x)
         {
-            float result = (x * x) + (2 * x) - 7;
-            return result;
+            // x^2 + 2x - 7
+            return x * x + 2 * x - 7;
         }
 
+        // Problem B - Quadratic Roots
         public struct QuadraticRoots
         {
             public float rootA;
             public float rootB;
-            public bool hasRoot;
+            public bool hasRoots;
         }
 
-
-        //Problem B - Quadratic Equation "-B plus or minus the square root of b squared minus four A C all over 2 A"
-        public static QuadraticRoots QuadraticEquation(float a, float b, float c)
+        public static QuadraticRoots GetQuadraticRoots(float a, float b, float c)
         {
-            QuadraticRoots root = new QuadraticRoots();
+            // calculate the numerator
+            float numA = -b + MathF.Sqrt(b * b - 4 * a * c);
+            float numB = -b - MathF.Sqrt(b * b - 4 * a * c);
 
-            if (MathF.Sqrt((b * b) - (4 * a * c)) < 0)
+            // calculate the denominator
+            float den = 2 * a;
+
+            // create a quadraticroots object
+            QuadraticRoots roots = new QuadraticRoots();
+            roots.rootA = numA / den;
+            roots.rootB = numB / den;
+            if ((b * b - 4 * a * c) >= 0)
             {
-                root.rootA = float.NaN;
-                root.rootB = float.NaN;
-                root.hasRoot = false;
-                return root;
+                roots.hasRoots = false;
             }
             else
             {
-                root.rootA = (((b * -1) + MathF.Sqrt((b * b) - (4 * a * c))) / (2 * a));
-                root.rootB = (((b * -1) - MathF.Sqrt((b * b) - (4 * a * c))) / (2 * a));
-                root.hasRoot = true;
-                return root;
+                roots.hasRoots = true;
             }
+
+            // return it
+            return roots;
         }
 
-        //Problem C - basic linear blend equation, returns a blended variable from s to e based on a percentage variable t
-        //              s + t(e - s)
-        public static float LinearBlendEquation(float s, float e, float t)
+        // Problem C - Linear Blend (aka lerp - linear interpolation)
+        public static float Lerp(float start, float end, float time)
         {
-            return s + t * (e - s);
+            return start + time * (end - start);
         }
 
-        public struct Point
+        // Problem D - Distance Between Two Points
+        public static float Distance(float x1, float y1, float x2, float y2)
+        {
+            return MathF.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        }
+
+        public struct Point2D
         {
             public float x;
             public float y;
-            public float z;
         }
-
-        //Problem D - distance between two points
-        public static float DistanceBetweenTwoPoints(Point firstPoint, Point secondPoint)
+        public static float Distance(Point2D p1, Point2D p2)
         {
-            return MathF.Sqrt(((secondPoint.x - firstPoint.x) * (secondPoint.x - firstPoint.x)) + ((secondPoint.y - firstPoint.y) * (secondPoint.y - firstPoint.y)));
-        }
-
-        //Problem E - inner products of two points
-        public static float InnerProductTwoPoints(Point p, Point q)
-        {
-            return ((p.x * q.x) + (p.y * q.y) + (p.z * q.z));
-        }
-
-        public struct Plane
-        {
-            public float a;
-            public float b;
-            public float c;
-            public float d;
-        }
-
-
-        //Problem F - Distance from point to plane
-        //      plane - ax + by + cz + d
-        //      point - x, y, z
-        public static float DistanceBetweenPlaneAndPoint(Plane P, Point X)
-        {
-            return ((P.a * X.x) + (P.b * X.y) + (P.c * X.z) + P.d) / (MathF.Sqrt((P.a * P.a) + (P.b * P.b) + (P.c * P.c)));
-        }
-
-        //problem G - Cubic Bezier Curve
-        public static float CubicBezierCurve(float t, float P0, float P1, float P2, float P3)
-        {
-            return (((MathF.Pow(1 - t, 3) * P0) + 3 * (MathF.Pow(1 - t, 2) * (t * P1) + 3 * ((MathF.Pow(1 - t, 2) * ((t * t) * P2)) + (MathF.Pow(t, 3) * P3)))));
+            return MathF.Sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
         }
     }
 }

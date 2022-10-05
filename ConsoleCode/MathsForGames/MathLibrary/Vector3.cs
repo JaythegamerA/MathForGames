@@ -9,6 +9,8 @@ namespace MathLibrary
     public struct Vector3
     {
         public float x, y, z;
+        private int v1;
+        private int v2;
 
         //3 parameter constructor
         public Vector3(float x, float y, float z)
@@ -16,6 +18,12 @@ namespace MathLibrary
             this.x = x;
             this.y = y;
             this.z = z;
+        }
+
+        public Vector3(int v1, int v2) : this()
+        {
+            this.v1 = v1;
+            this.v2 = v2;
         }
 
         public float Magnitude

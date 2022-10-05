@@ -40,6 +40,16 @@
         "runtime": {
           "lib/netcoreapp2.0/_._": {}
         }
+      },
+      "MathLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MathLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MathLibrary.dll": {}
+        }
       }
     }
   },
@@ -111,10 +121,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "MathLibrary/1.0.0": {
+      "type": "project",
+      "path": "../MathLibrary/MathLibrary.csproj",
+      "msbuildProject": "../MathLibrary/MathLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "MathLibrary >= 1.0.0",
       "Raylib-cs >= 4.0.0.2"
     ]
   },
@@ -144,7 +160,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
+              "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
