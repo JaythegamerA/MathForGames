@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trig", "Trig\Trig.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLibraryTest", "MathLibraryTest\MathLibraryTest.csproj", "{7FAFC4F2-61C0-4A8C-9B38-DEE471C8B1E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAndColor", "BinaryAndColor\BinaryAndColor.csproj", "{A410197B-C9E6-4C24-B0D2-318F389119FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryAndColor", "BinaryAndColor\BinaryAndColor.csproj", "{A410197B-C9E6-4C24-B0D2-318F389119FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vectors", "Vectors\Vectors.csproj", "{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vectors", "Vectors\Vectors.csproj", "{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{93965240-7751-4445-8B92-A8EF67284475}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93965240-7751-4445-8B92-A8EF67284475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93965240-7751-4445-8B92-A8EF67284475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93965240-7751-4445-8B92-A8EF67284475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93965240-7751-4445-8B92-A8EF67284475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
