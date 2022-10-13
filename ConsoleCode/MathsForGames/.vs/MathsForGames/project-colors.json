@@ -35,7 +35,12 @@
       "ProjectGuid": "92d4f96d-2e0a-4f6f-bd7b-0715bd67c069",
       "DisplayName": "Vectors",
       "ColorIndex": 5
+    },
+    "93965240-7751-4445-8b92-a8ef67284475": {
+      "ProjectGuid": "93965240-7751-4445-8b92-a8ef67284475",
+      "DisplayName": "Matrix",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 7
 }
