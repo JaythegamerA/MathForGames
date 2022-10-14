@@ -57,7 +57,7 @@ public class Program
         Raylib.InitWindow(screenWidth, screenHeight, "Trig in Raylib");
         Raylib.SetTargetFPS(60);
 
-        Texture2D texDog = Raylib.LoadTexture(@"Res/dog.png");
+        Texture2D texDog = Raylib.LoadTexture(@"res/dog.png");
 
         float linePosX = screenWidth / 2;
         float linePosY = screenHeight / 2;
