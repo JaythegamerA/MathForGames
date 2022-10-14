@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,11 @@ namespace MathLibrary
         /// </summary>
         public void Normalize()
         {
-            this /= Magnitude;
+            float mag = Magnitude;
+            if (mag != 0)
+            {
+                this /= Magnitude;
+            }
         }
 
         /// <summary>
@@ -49,7 +54,12 @@ namespace MathLibrary
         {
             get
             {
-                return this / Magnitude;
+                float mag = Magnitude;
+                if (mag != 0)
+                {
+                    return this / Magnitude;
+                }
+                return this;
             }
         }
 
@@ -97,6 +107,20 @@ namespace MathLibrary
         public Vector3 Scaled(Vector3 rhs)
         {
             return new Vector3(x * rhs.x, y * rhs.y, z * rhs.z);
+        }
+
+        public static Vector3 ClampMagnitude(Vector3 vec, float maxMagnitude)
+        {
+            float curMag = vec.Magnitude;
+
+            // if the magnitude is too large, rescale the vector
+            if (curMag > maxMagnitude)
+            {
+                return vec.Normalized * maxMagnitude;
+            }
+
+            // if it's fine as-is, return as-is
+            return vec;
         }
 
         /// <summary>
@@ -182,21 +206,28 @@ namespace MathLibrary
                                vec.z * scalar);  // product of the Zs
         }
 
+        // Equals(Vector3)
+        // Equals(object) - override!
+        // == operator
+        // != operator
+        // GetHashCode()
+        // ToString()
 
         public bool Equals(Vector3 other)
         {
-            if (MathF.Abs(x-other.x)<0.0001 &&
-                MathF.Abs(y-other.y)<0.0001 &&
-                MathF.Abs(z-other.z)<0.0001)
+            if (MathU.ApproximatelyEqual(x, other.x) &&
+                MathU.ApproximatelyEqual(y, other.y) &&
+                MathU.ApproximatelyEqual(z, other.z))
             {
                 return true;
             }
+
             return false;
         }
 
         public override bool Equals(object? obj)
         {
-            return this.Equals((Vector3?)obj);
+            return obj != null && Equals((Vector3)obj);
         }
 
         /// <summary>
@@ -207,14 +238,7 @@ namespace MathLibrary
         /// <returns>True if approximately equal, false if not</returns>
         public static bool operator ==(Vector3 lhs, Vector3 rhs)
         {
-            if (MathF.Abs(lhs.x - rhs.x) < 0.0001 &&
-               MathF.Abs(lhs.y - rhs.y) < 0.0001 &&
-               MathF.Abs(lhs.z - rhs.z) < 0.0001)
-            {
-                return true;
-            }
-
-            return false;
+            return lhs.Equals(rhs);
         }
 
         /// <summary>

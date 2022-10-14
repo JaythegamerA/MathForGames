@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "BinaryAndColor/1.0.0": {
         "dependencies": {
+          "MathLibrary": "1.0.0",
           "Raylib-cs": "4.0.0.2"
         },
         "runtime": {
@@ -47,7 +48,12 @@
           }
         }
       },
-      "System.Numerics.Vectors/4.5.0": {}
+      "System.Numerics.Vectors/4.5.0": {},
+      "MathLibrary/1.0.0": {
+        "runtime": {
+          "MathLibrary.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -69,6 +75,11 @@
       "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "MathLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
