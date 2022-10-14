@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Raylib_cs;
+
 using MathLibrary;
 using GameFramework;
 
@@ -12,27 +13,15 @@ namespace Matrix
 {
     public class Monster : SpriteObject
     {
-
         protected override void OnUpdate(float deltaTime)
         {
-            //  TODO: Implement me!
+            // check for key input and move when detected
             float xMove = 0.0f;
             float yMove = 0.0f;
 
-            float spriteScalar = 0.0f;
-
-            float rotationAngle = 0.0f;
-
-            const float ROTATESPEED = 1f;
-
             const float MOVESPEED = 20.0f;
 
-            //  check for input
-
-            //
-            //  Translation
-            //
-
+            // A-D for LEFT-RIGHT movement
             if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
                 xMove -= MOVESPEED * deltaTime;
@@ -42,6 +31,7 @@ namespace Matrix
                 xMove += MOVESPEED * deltaTime;
             }
 
+            // W-S for UP-DOWN movement
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
             {
                 yMove -= MOVESPEED * deltaTime;
@@ -51,54 +41,36 @@ namespace Matrix
                 yMove += MOVESPEED * deltaTime;
             }
 
-            //
-            //  Rotation
-            //
-
-            //  Rotate counter-clockwise
+            // Q-E for CCW and CW (the rotation)
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
-                rotationAngle += ROTATESPEED * deltaTime;
+                LocalRotation += 5.0f * deltaTime;
             }
-
-            //  Rotate clockwise
             if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
             {
-                rotationAngle -= ROTATESPEED * deltaTime;
-
+                LocalRotation -= 5.0f * deltaTime;
             }
 
-            //
-            //  Scaling
-            //
-
-            //  Scale up:
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_FOUR))
-            {
-                spriteScalar += 1 * deltaTime;
-            }
-
-            //  Scale down:
+            // 1-3 for SHRINK and GROW (the scale)
             if (Raylib.IsKeyDown(KeyboardKey.KEY_ONE))
             {
-                spriteScalar -= 1 * deltaTime;
+                LocalScale -= new Vector3(2.0f, 2.0f, 2.0f) * deltaTime;
+            }
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_THREE))
+            {
+                LocalScale += new Vector3(2.0f, 2.0f, 2.0f) * deltaTime;
             }
 
-
-            //  apply the movement / rotation / scaling
+            // apply the move!
             Translate(xMove, yMove);
-            Rotate(rotationAngle);
-            Scale(spriteScalar, spriteScalar);
 
-
-            //  F to make your minion pay respect
+            // F for Spawn Minion
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_F))
             {
                 GameObject minion = GameObjectFactory.MakeSprite("res/chort.png");
-                Program.AddRootGameObject(minion);
-                minion.Parent = this;
-                children.Add(minion);
                 minion.LocalPosition = LocalPosition;
+
+                Program.AddRootGameObject(minion);
             }
         }
     }

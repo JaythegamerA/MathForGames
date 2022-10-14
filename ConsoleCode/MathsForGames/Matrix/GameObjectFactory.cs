@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Raylib_cs;
 
 using GameFramework;
+using MathLibrary;
 
 namespace Matrix
 {
@@ -23,6 +24,8 @@ namespace Matrix
         public static GameObject MakeSprite(string pathToSprite)
         {
             SpriteObject newSprite = new SpriteObject();
+
+            // check for valid path!
             if (!File.Exists(pathToSprite))
             {
                 throw new FileNotFoundException("File not found at path: " + pathToSprite);
@@ -31,6 +34,15 @@ namespace Matrix
             newSprite.sprite = Raylib.LoadTexture(pathToSprite);
 
             return newSprite;
+        }
+
+        public static GameObject MakeHoverCircle(Vector3 position, float radius)
+        {
+            HoverCircle newHoverCircle = new HoverCircle();
+            newHoverCircle.LocalPosition = position;
+            newHoverCircle.radius = radius;
+
+            return newHoverCircle;
         }
     }
 }
