@@ -114,31 +114,57 @@ namespace MathLibrary
             return new Vector4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
         }
 
-        //equality comparisons
-        //  ==
-        public static bool operator ==(Vector4 lhs, Vector4 rhs)
+        public bool Equals(Vector4 other)
         {
-            //if the difference of each component is less than twice the float.Epsilon, consider them equal
-            if (MathF.Abs(lhs.x - rhs.x) < (float.Epsilon)
-                && MathF.Abs(lhs.y - rhs.y) < (float.Epsilon)
-                && MathF.Abs(lhs.z - rhs.z) < (float.Epsilon)
-                && MathF.Abs(lhs.w - rhs.w) < (float.Epsilon))
+            if (MathF.Abs(x - other.x) < 0.0001 &&
+                MathF.Abs(y - other.y) < 0.0001 &&
+                MathF.Abs(z - other.z) < 0.0001 &&
+                MathF.Abs(w - other.w) < 0.0001)
             {
                 return true;
             }
-            //otherwise, they are not equal
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
-        //  !=
+        public override bool Equals(object? obj)
+        {
+            return obj != null && Equals((Vector4)obj);
+        }
+
+        /// <summary>
+        /// Determines if two vectors are approximately equal
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns>True if approximately equal, false if not</returns>
+        public static bool operator ==(Vector4 lhs, Vector4 rhs)
+        {
+            return lhs.Equals(rhs);
+        }
+
+        /// <summary>
+        /// Determines if two vectors are approximately inequal
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns>True if approximately inequal, false if not</returns>
         public static bool operator !=(Vector4 lhs, Vector4 rhs)
         {
             return !(lhs == rhs);
         }
 
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+
+            hash.Add(x);
+            hash.Add(y);
+            hash.Add(z);
+            hash.Add(w);
+
+            return hash.ToHashCode();
+        }
         #endregion
 
         //ToString() override
