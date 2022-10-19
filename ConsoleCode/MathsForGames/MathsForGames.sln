@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryAndColor", "BinaryAnd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vectors", "Vectors\Vectors.csproj", "{92D4F96D-2E0A-4F6F-BD7B-0715BD67C069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Matrix\Matrix.csproj", "{93965240-7751-4445-8B92-A8EF67284475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matrix", "Matrix\Matrix.csproj", "{93965240-7751-4445-8B92-A8EF67284475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicalTestApplication", "GraphicalTestApplication\GraphicalTestApplication.csproj", "{1C228C26-7B78-4837-A820-6CFF6B04D731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{93965240-7751-4445-8B92-A8EF67284475}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93965240-7751-4445-8B92-A8EF67284475}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93965240-7751-4445-8B92-A8EF67284475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C228C26-7B78-4837-A820-6CFF6B04D731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C228C26-7B78-4837-A820-6CFF6B04D731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C228C26-7B78-4837-A820-6CFF6B04D731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C228C26-7B78-4837-A820-6CFF6B04D731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

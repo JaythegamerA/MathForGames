@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wOVtkyMJMaG0A2F6QzH6yLXw80OTPmigrxYVvt5u72PO22jgXrtadowc46HT0EWdPZ0U5OkvyqbkCIKx4Qw6FA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\TankProject\\TankProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\s229040\\.nuget\\packages\\raylib-cs\\4.2.0.1\\raylib-cs.4.2.0.1.nupkg.sha512",
+    "C:\\Users\\s229040\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
