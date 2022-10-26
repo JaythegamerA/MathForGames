@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2iXTKs4J1lMkdlSczYwJiTUFrtt/GLFYertNZj+ZJoBbkE3lM2K7DbcPVh7ThIedBVVWLscwAOWT8XvzFT/lMQ==",
+  "dgSpecHash": "Sn/BqsLJ6dz3myzUpY2AtNr+gJk8gN/35VT2HSo8S9kohCluj1TWEB0TiaEFrr7O/cQk7LfKBa+bu28svg+ZhQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\GraphicalTestApplication\\GraphicalTestApplication.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\s229040\\.nuget\\packages\\raylib-cs\\4.2.0.1\\raylib-cs.4.2.0.1.nupkg.sha512",
+    "C:\\Users\\s229040\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

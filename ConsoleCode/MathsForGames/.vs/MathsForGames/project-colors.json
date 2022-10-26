@@ -40,7 +40,17 @@
       "ProjectGuid": "93965240-7751-4445-8b92-a8ef67284475",
       "DisplayName": "Matrix",
       "ColorIndex": 6
+    },
+    "80d94da2-eb3e-4463-ba48-67dd46725599": {
+      "ProjectGuid": "80d94da2-eb3e-4463-ba48-67dd46725599",
+      "DisplayName": "TankProject",
+      "ColorIndex": 7
+    },
+    "1c228c26-7b78-4837-a820-6cff6b04d731": {
+      "ProjectGuid": "1c228c26-7b78-4837-a820-6cff6b04d731",
+      "DisplayName": "GraphicalTestApplication",
+      "ColorIndex": 8
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 9
 }
