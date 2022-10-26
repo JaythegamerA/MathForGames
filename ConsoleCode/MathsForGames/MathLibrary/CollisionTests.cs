@@ -8,27 +8,32 @@ namespace MathLibrary
 {
     public static class CollisionTests
     {
-        public static bool CirclePointTest(Vector3 circlePos, float circleRadius, Vector3 pointPos)
+        public static bool CirclePointTest(Vector3 circlePosition, float circleRadius, Vector3 pointPosition)
         {
-            // get the distance
-            Vector3 offset = circlePos - pointPos;
-            float dist2 = offset.Dot(offset);
-
-            // compare to radius of circle  (if less, collision! if more, no collision)
-            return dist2 <= circleRadius * circleRadius;
-
-            /* Slow and naive implementation of circle-pooint
-            float dist = (circlePos - pointPos).Magnitude;
-            return dist <= circleRadius;
+            /* SLOW IMPLEMENTATION
+            //get the distance
+            float distance = (circlePosition - pointPosition).Magnitude;
+            //compare to radius of circle, if less collision, if more no collision
+            return distance <= circleRadius;
             */
+            //FASTER IMPLEMENTATION
+            Vector3 offset = circlePosition - pointPosition;
+            float distanceSquared = offset.Dot(offset);
+
+            return distanceSquared <= circleRadius * circleRadius;
         }
 
-        // CircleCircleTest
+        public static bool CircleCircleTest(Vector3 circleOnePos, float circleOneR, Vector3 circleTwoPos, float circleTwoR)
+        {
+            //cache the distance between the center of both circles
+            Vector3 centerDeltaDistance = circleOnePos - circleTwoPos;
+            //cache the combined radius
+            float combinedRadii = circleOneR + circleTwoR;
 
-        // AABBPointTest
-
-        // AABBAABBTest
-
-        // CircleAABBTest
+            //check if the distance between the two centers (squared) is less than or equal to the combined radii (squared)
+            return (centerDeltaDistance.Dot(centerDeltaDistance)) <= (combinedRadii * combinedRadii);
+        }
     }
+
+
 }
