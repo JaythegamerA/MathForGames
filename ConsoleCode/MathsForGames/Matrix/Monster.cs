@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Raylib_cs;
-
 using MathLibrary;
 using GameFramework;
 
@@ -13,81 +12,93 @@ namespace Matrix
 {
     public class Monster : SpriteObject
     {
-        public Vector3 velocity;
-        public Vector3 acceleration;
-        public float drag = 1;
 
         protected override void OnUpdate(float deltaTime)
         {
-            // check for key input and move when detected
+            //  TODO: Implement me!
             float xMove = 0.0f;
             float yMove = 0.0f;
 
-            const float ACCEL_SPEED = 75.0f;
+            float spriteScalar = 0.0f;
 
-            // A-D for LEFT-RIGHT movement
+            float rotationAngle = 0.0f;
+
+            const float ROTATESPEED = 1f;
+
+            const float MOVESPEED = 20.0f;
+
+            //  check for input
+
+            //
+            //  Translation
+            //
+
             if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
-                xMove -= 1;
+                xMove -= MOVESPEED * deltaTime;
             }
             if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                xMove += 1;
+                xMove += MOVESPEED * deltaTime;
             }
 
-            // W-S for UP-DOWN movement
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
             {
-                yMove -= 1;
+                yMove -= MOVESPEED * deltaTime;
             }
             if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
             {
-                yMove += 1;
+                yMove += MOVESPEED * deltaTime;
             }
 
-            // build user input vector
-            Vector3 moveInput = new Vector3(xMove, yMove, 0);
-            moveInput = Vector3.ClampMagnitude(moveInput, 1);
+            //
+            //  Rotation
+            //
 
-            // create acceleration - the amount by which we are changing our velocity
-            acceleration = moveInput * ACCEL_SPEED;
-
-            // integrating acceleration into velocity
-            velocity += acceleration * deltaTime;
-
-            // apply drag - integrate drag into the equation (modelling air resistances)
-            velocity *= 1.0f - deltaTime * drag;
-
-            // apply the move! - integrate velocity into position
-            LocalPosition = LocalPosition + velocity * deltaTime;
-
-            // Q-E for CCW and CW (the rotation)
+            //  Rotate counter-clockwise
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
-                LocalRotation += 5.0f * deltaTime;
+                rotationAngle += ROTATESPEED * deltaTime;
             }
+
+            //  Rotate clockwise
             if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
             {
-                LocalRotation -= 5.0f * deltaTime;
+                rotationAngle -= ROTATESPEED * deltaTime;
+
             }
 
-            // 1-3 for SHRINK and GROW (the scale)
+            //
+            //  Scaling
+            //
+
+            //  Scale up:
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_FOUR))
+            {
+                spriteScalar += 1 * deltaTime;
+            }
+
+            //  Scale down:
             if (Raylib.IsKeyDown(KeyboardKey.KEY_ONE))
             {
-                LocalScale -= new Vector3(2.0f, 2.0f, 2.0f) * deltaTime;
-            }
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_THREE))
-            {
-                LocalScale += new Vector3(2.0f, 2.0f, 2.0f) * deltaTime;
+                spriteScalar -= 1 * deltaTime;
             }
 
-            // F for Spawn Minion
+
+            //  apply the movement / rotation / scaling
+            Translate(xMove, yMove);
+            Rotate(rotationAngle);
+            Scale(spriteScalar, spriteScalar);
+
+
+            //  F to make your minion pay respect
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_F))
             {
                 GameObject minion = GameObjectFactory.MakeSprite("res/chort.png");
-                minion.LocalPosition = LocalPosition;
-
                 Program.AddRootGameObject(minion);
+                minion.Parent = this;
+                children.Add(minion);
+                minion.LocalPosition = LocalPosition;
             }
         }
     }

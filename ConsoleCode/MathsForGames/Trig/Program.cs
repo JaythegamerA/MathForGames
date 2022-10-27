@@ -96,6 +96,7 @@ public class Program
             Raylib.ClearBackground(Color.DARKGRAY);
 
             Raylib.DrawLine((int)initialPos.X, (int)initialPos.Y, (int)finalPos.X, (int)finalPos.Y, Color.BLACK);
+            Raylib.DrawTexture(texDog, 100, 100, Color.GRAY);
 
             DrawCircle(200, 200, 60, Color.RED);
 

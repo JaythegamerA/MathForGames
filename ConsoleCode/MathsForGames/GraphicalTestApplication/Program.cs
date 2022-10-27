@@ -1,90 +1,89 @@
 ﻿using Raylib_cs;
+using MathLibrary;
 using GameFramework;
-using Tanks;
 
-public class Program
+namespace TankProject
 {
-    private static List<GameObject> gameObjects = new List<GameObject>();
-    private static List<GameObject> pendingObjects = new List<GameObject>();
-    private static List<GameObject> killObjects = new List<GameObject>();
-
-    public static void AddRootGameObject(GameObject newGameObject)
+    public class Program
     {
-        pendingObjects.Add(newGameObject);
-    }
 
-    public static void Destroy(GameObject toDestroy)
-    {
-        killObjects.Add(toDestroy);
-    }
+        private static List<Bullet> bullets = new List<Bullet>();
+        private static List<Bullet> pendingBullets = new List<Bullet>();
+        private static List<Bullet> killBullets = new List<Bullet>();
 
-    public static int Main()
-    {
-        // Initializing - LOAD THE THINGS
-        const int screenW = 800;
-        const int screenH = 450;
-
-        Raylib.InitWindow(screenW, screenH, "Tank Go Brr");
-        Raylib.SetTargetFPS(60);
-
-        // INITIALIZE GAMEPLAY
-
-        bool isPaused = false;
-
-        gameObjects.Add(GameObjectFactory.MakeTank("res/tankGreen.png"));
-
-        // Game Loop - PLAY THE GAME
-        while (!Raylib.WindowShouldClose())
+        public static void Instantiate(Bullet newBullet)
         {
-            // Update GAMEPLAY
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_BACKSPACE))
-            {
-                isPaused = !isPaused;
-            }
-
-            // Update all current objects
-            if (!isPaused)
-            {
-                foreach (var go in gameObjects)
-                {
-                    go.Update(Raylib.GetFrameTime());
-                }
-            }
-
-            // Draw GAMEPLAY
-            Raylib.BeginDrawing();
-
-            Raylib.ClearBackground(Color.RAYWHITE);
-
-            // Draw all current objects
-            foreach (var go in gameObjects)
-            {
-                go.Draw();
-            }
-
-            Raylib.EndDrawing();
-
-            // Process PENDING OBJECTS
-
-            // Remove all objects that are marked for destroy
-            foreach (var kill in killObjects)
-            {
-                gameObjects.Remove(kill);
-            }
-            killObjects.Clear();
-
-            // Add all objects that are waiting to be alive
-            foreach (var pending in pendingObjects)
-            {
-                gameObjects.Add(pending);
-            }
-            pendingObjects.Clear();
+            pendingBullets.Add(newBullet);
         }
 
-        // Deinitializing - UNLOAD THE THINGS
-        Raylib.CloseWindow();
+        public static void Destroy(Bullet toDestroy)
+        {
+            killBullets.Add(toDestroy);
+        }
 
-        return 0;
+        static int Main()
+        {
+            // Initializing - LOAD THE THINGS
+            const int screenW = 800;
+            const int screenH = 450;
+
+            Raylib.InitWindow(screenW, screenH, "Tank Demo");
+            Raylib.SetTargetFPS(60);
+
+            Tank tank = new Tank();
+            tank.localPosition = new Vector3(100, 100, 1);
+            Turret turret = new Turret();
+            turret.localPosition = tank.localPosition;
+
+            turret.Parent = tank;
+
+            // Game Loop - PLAY THE GAME
+            while (!Raylib.WindowShouldClose())
+            {
+                tank.Update(Raylib.GetFrameTime());
+                turret.Update(Raylib.GetFrameTime());
+
+                foreach (var bullet in bullets)
+                {
+                    bullet.Update(Raylib.GetFrameTime());
+                }
+
+                // Draw Stuff
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.WHITE);
+
+                tank.Draw();
+
+                turret.Draw();
+
+                foreach (var bullet in bullets)
+                {
+                    bullet.Draw();
+                }
+
+
+                Raylib.EndDrawing();
+
+                //Destroy Bullets
+                foreach (var kill in killBullets)
+                {
+                    bullets.Remove(kill);
+                }
+                killBullets.Clear();
+
+                //Process pending bullets
+                foreach (var pending in pendingBullets)
+                {
+                    bullets.Add(pending);
+                }
+
+                pendingBullets.Clear();
+            }
+
+            // Deinitializing - UNLOAD THE THINGS
+            Raylib.CloseWindow();
+
+            return 0;
+        }
     }
-
 }

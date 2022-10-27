@@ -1,36 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathLibrary
+﻿namespace MathLibrary
 {
     public struct Vector2
     {
         public float x, y;
 
-        //3 parameter constructor
+
+        //Vector2 Constructor
         public Vector2(float x, float y)
         {
             this.x = x;
             this.y = y;
         }
 
+        //Calculates the Magnitude
         public float Magnitude
         {
             get
             {
-                return MathF.Sqrt((x * x) + (y * y));
+                return MathF.Sqrt(x * x + y * y);
             }
         }
-
+        //Normalizes a Vector2
         public void Normalize()
         {
-            x = x / Magnitude;
-            y = y / Magnitude;
+            this /= Magnitude;
         }
 
+        //Same thing as Normalize, but returns the value
         public Vector2 Normalized
         {
             get
@@ -39,85 +35,101 @@ namespace MathLibrary
             }
         }
 
+        //Scales a Vector2
         public void Scale(Vector2 rhs)
         {
-            x = rhs.x * x;
-            y = rhs.y * y;
+            this.x *= rhs.x;
+            this.y *= rhs.y;
         }
 
+        //Same thing as Scale, but returns the value
         public Vector2 Scaled(Vector2 rhs)
         {
-            return new Vector2(rhs.x * x, rhs.y * y);
+            return new Vector2(x * rhs.x, y * rhs.y);
         }
 
-        //operations:
-        //  addition
-        public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
+        //Calculates Dot Product for a Vector2
+        public float Dot(Vector2 rhs)
         {
-            Vector2 result = new Vector2();
-            result.x = lhs.x + rhs.x;
-            result.y = lhs.y + rhs.y;
-            return result;
+            return ((x * rhs.x) + (y * rhs.y));
         }
 
-        //  subtraction
-        public static Vector2 operator -(Vector2 lhs, Vector2 rhs)
-        {
-            Vector2 result = new Vector2();
-            result.x = lhs.x - rhs.x;
-            result.y = lhs.y - rhs.y;
-            return result;
-        }
-
-        //  negation
-        public static Vector2 operator -(Vector2 rhs)
-        {
-            Vector2 result = new Vector2();
-            result.x = rhs.x * -1.0f;
-            result.y = rhs.y * -1.0f;
-            return result;
-        }
-
+        //Multiplcation Operators
         public static Vector2 operator *(Vector2 lhs, float rhs)
         {
             return new Vector2(lhs.x * rhs, lhs.y * rhs);
         }
+
         public static Vector2 operator *(float lhs, Vector2 rhs)
         {
             return new Vector2(lhs * rhs.x, lhs * rhs.y);
         }
+
+        //Division Operator
         public static Vector2 operator /(Vector2 lhs, float rhs)
         {
             return new Vector2(lhs.x / rhs, lhs.y / rhs);
         }
 
-        //equality comparisons
-        //  ==
-        public static bool operator ==(Vector2 lhs, Vector2 rhs)
+        //Addition Operator
+        public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
         {
-            //if the difference of each component is less than twice the float.Epsilon, consider them equal
-            if (MathF.Abs(lhs.x - rhs.x) < (float.Epsilon)
-                && MathF.Abs(lhs.y - rhs.y) < (float.Epsilon))
+            return new Vector2(lhs.x + rhs.x, lhs.y + rhs.y);
+        }
+
+        //Subtraction Operators
+        public static Vector2 operator -(Vector2 lhs, Vector2 rhs)
+        {
+            return new Vector2(lhs.x - rhs.x, lhs.y - rhs.y);
+        }
+
+        public static Vector2 operator -(Vector2 rhs)
+        {
+            return new Vector2(-rhs.x, -rhs.y);
+        }
+
+        //Equals Functions for Vector2s and Objects
+        public bool Equals(Vector2 other)
+        {
+            if (MathF.Abs(x - other.x) < 0.0001 && MathF.Abs(y - other.y) < 0.0001)
             {
                 return true;
             }
-            //otherwise, they are not equal
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
-        //  !=
+        public override bool Equals(object? obj)
+        {
+            return obj != null && this.Equals((Vector2)obj);
+        }
+
+
+        //Equals and Not Equals Operators
+        public static bool operator ==(Vector2 lhs, Vector2 rhs)
+        {
+            return lhs.Equals(rhs);
+        }
+
         public static bool operator !=(Vector2 lhs, Vector2 rhs)
         {
             return !(lhs == rhs);
         }
 
-        //override the default ToString implementation
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+
+            hash.Add(x);
+            hash.Add(y);
+
+            return hash.ToHashCode();
+        }
+
+
+        //Converts the Vector2 to a string for debugging purposes
         public override string ToString()
         {
-            return "{ " + x + "(x) " + y + "(y) }";
+            return x.ToString() + "," + y.ToString();
         }
     }
 }

@@ -1,253 +1,125 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MathLibrary
+﻿namespace MathLibrary
 {
-    public struct Vector3
+    public struct Vector4
     {
-        public float x, y, z;
+        public float x, y, z, w;
 
-        /// <summary>
-        /// Constructor that initializes the x, y, and z components
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
-        public Vector3(float x, float y, float z = 0)
+        //Vector4 Constructor
+        public Vector4(float x, float y, float z, float w)
         {
             this.x = x;
             this.y = y;
             this.z = z;
+            this.w = w;
         }
 
-        /// <summary>
-        /// The length or magnitude of the Vector
-        /// </summary>
+        //Calculates the Magnitude
         public float Magnitude
         {
             get
             {
-                return MathF.Sqrt(x * x + y * y + z * z);
+                return MathF.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
             }
         }
 
-        /// <summary>
-        /// Normalize this Vector
-        /// </summary>
+        //Normalizes a Vector4
         public void Normalize()
         {
-            float mag = Magnitude;
-            if (mag != 0)
-            {
-                this /= Magnitude;
-            }
+            this /= Magnitude;
         }
 
-        /// <summary>
-        /// Returns a copy of the current Vector as it would be if normalized
-        /// </summary>
-        public Vector3 Normalized
+        //Same thing as Normalize, but returns the value
+        public Vector4 Normalized
         {
             get
             {
-                float mag = Magnitude;
-                if (mag != 0)
-                {
-                    return this / Magnitude;
-                }
-                return this;
+                return new Vector4(x / Magnitude, y / Magnitude, z / Magnitude, w / Magnitude);
             }
         }
 
-        /// <summary>
-        /// Return the dot product between this Vector and the other
-        /// 
-        /// Describes the amount of overlap between these two Vectors
-        /// </summary>
-        /// <param name="rhs">The other Vector</param>
-        /// <returns></returns>
-        public float Dot(Vector3 rhs)
+        //Scales a Vector4
+        public void Scale(Vector4 rhs)
         {
-            return x * rhs.x + y * rhs.y + z * rhs.z;
+            this.x *= rhs.x;
+            this.y *= rhs.y;
+            this.z *= rhs.z;
+            this.w *= rhs.w;
         }
 
-        /// <summary>
-        /// Return the cross-product between this Vector and the other
-        /// 
-        /// Describes the vector that is perpendicular to the plane formed by this Vector and the other
-        /// </summary>
-        /// <param name="rhs"></param>
-        /// <returns></returns>
-        public Vector3 Cross(Vector3 rhs)
+        //Same thing as Scale, but returns the value
+        public Vector4 Scaled(Vector4 rhs)
         {
-            return new Vector3(y * rhs.z - z * rhs.y,
-                               z * rhs.x - x * rhs.z,
-                               x * rhs.y - y * rhs.x);
+            return new Vector4(x * rhs.x, y * rhs.y, z * rhs.z, w * rhs.w);
         }
 
-        /// <summary>
-        /// Multiply the current Vector's components by the other Vector's components
-        /// </summary>
-        /// <param name="rhs"></param>
-        public void Scale(Vector3 rhs)
+        //Calculates the Dot Product for a Vector4
+        public float Dot(Vector4 rhs)
         {
-            x *= rhs.x;
-            y *= rhs.y;
-            z *= rhs.z;
+            return ((x * rhs.x) + (y * rhs.y) + (z * rhs.z) + (w * rhs.w));
         }
 
-        /// <summary>
-        /// Returns a copy of the current Vector's components multiplied by the other Vector's components
-        /// </summary>
-        /// <param name="rhs"></param>
-        public Vector3 Scaled(Vector3 rhs)
+        //Calculates the Cross Product for a Vector4
+        public Vector4 Cross(Vector4 rhs)
         {
-            return new Vector3(x * rhs.x, y * rhs.y, z * rhs.z);
+            return new Vector4((y * rhs.z) - (rhs.y * z), (z * rhs.x) - (rhs.z * x), (x * rhs.y) - (rhs.x * y), 0);
         }
 
-        public static Vector3 ClampMagnitude(Vector3 vec, float maxMagnitude)
+        //Multiplcation Operators
+        public static Vector4 operator *(Vector4 lhs, float rhs)
         {
-            float curMag = vec.Magnitude;
-
-            // if the magnitude is too large, rescale the vector
-            if (curMag > maxMagnitude)
-            {
-                return vec.Normalized * maxMagnitude;
-            }
-
-            // if it's fine as-is, return as-is
-            return vec;
+            return new Vector4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
         }
 
-        /// <summary>
-        /// The sums of the Xs, Ys, and Zs, of the vectors
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="rhs"></param>
-        /// <returns></returns>
-        public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
+        public static Vector4 operator *(float lhs, Vector4 rhs)
         {
-            return new Vector3(lhs.x + rhs.x,   // sum of the Xs
-                               lhs.y + rhs.y,   // sum of the Ys
-                               lhs.z + rhs.z);  // sum of the Zs
+            return new Vector4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
         }
 
-        /// <summary>
-        /// The differences of the Xs, Ys, and Zs, of the vectors
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="rhs"></param>
-        /// <returns></returns>
-        public static Vector3 operator -(Vector3 lhs, Vector3 rhs)
+        //Division Operator
+        public static Vector4 operator /(Vector4 lhs, float rhs)
         {
-            return new Vector3(lhs.x - rhs.x,   // difference of the Xs
-                               lhs.y - rhs.y,   // difference of the Ys
-                               lhs.z - rhs.z);  // difference of the Zs
+            return new Vector4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
         }
 
-        /// <summary>
-        /// The negated Vector
-        /// </summary>
-        /// <param name="rhs"></param>
-        /// <returns></returns>
-        public static Vector3 operator -(Vector3 rhs)
+        //Addition Operator
+        public static Vector4 operator +(Vector4 lhs, Vector4 rhs)
         {
-            return new Vector3(-rhs.x,   // difference of the Xs
-                               -rhs.y,   // difference of the Ys
-                               -rhs.z);  // difference of the Zs
+            return new Vector4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
         }
 
-        /// <summary>
-        /// Scale a Vector by a scalar float
-        /// 
-        /// Multiplies each component of the Vector by the given scalar
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="scalar"></param>
-        /// <returns></returns>
-        public static Vector3 operator *(Vector3 lhs, float scalar)
+        //Subtraction Operators
+        public static Vector4 operator -(Vector4 lhs, Vector4 rhs)
         {
-            return new Vector3(lhs.x * scalar,   // product of the Xs
-                               lhs.y * scalar,   // product of the Ys
-                               lhs.z * scalar);  // product of the Zs
+            return new Vector4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
         }
 
-        /// <summary>
-        /// Divides a Vector by a scalar float
-        /// 
-        /// Divides each component of the Vector by the given scalar
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="scalar"></param>
-        /// <returns></returns>
-        public static Vector3 operator /(Vector3 lhs, float scalar)
+        public static Vector4 operator -(Vector4 rhs)
         {
-            return new Vector3(lhs.x / scalar,   // result of division of the Xs
-                               lhs.y / scalar,   // result of division of the Ys
-                               lhs.z / scalar);  // result of division of the Zs
+            return new Vector4(-rhs.x, -rhs.y, -rhs.z, -rhs.w);
         }
 
-        /// <summary>
-        /// Scale a Vector by a scalar float
-        /// 
-        /// Multiplies each component of the Vector by the given scalar
-        /// </summary>
-        /// <param name="scalar"></param>
-        /// <param name="vec"></param>
-        /// <returns></returns>
-        public static Vector3 operator *(float scalar, Vector3 vec)
+        public bool Equals(Vector4 other)
         {
-            return new Vector3(vec.x * scalar,   // product of the Xs
-                               vec.y * scalar,   // product of the Ys
-                               vec.z * scalar);  // product of the Zs
-        }
-
-        // Equals(Vector3)
-        // Equals(object) - override!
-        // == operator
-        // != operator
-        // GetHashCode()
-        // ToString()
-
-        public bool Equals(Vector3 other)
-        {
-            if (MathU.ApproximatelyEqual(x, other.x) &&
-                MathU.ApproximatelyEqual(y, other.y) &&
-                MathU.ApproximatelyEqual(z, other.z))
+            if (MathF.Abs(x - other.x) < 0.0001 && MathF.Abs(y - other.y) < 0.0001 && MathF.Abs(z - other.z) < 0.0001 && MathF.Abs(w - other.w) < 0.0001)
             {
                 return true;
             }
-
             return false;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj != null && Equals((Vector3)obj);
+            return obj != null && this.Equals((Vector4)obj);
         }
 
-        /// <summary>
-        /// Determines if two vectors are approximately equal
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="rhs"></param>
-        /// <returns>True if approximately equal, false if not</returns>
-        public static bool operator ==(Vector3 lhs, Vector3 rhs)
+
+        //Equals and Not Equals Operators
+        public static bool operator ==(Vector4 lhs, Vector4 rhs)
         {
             return lhs.Equals(rhs);
         }
 
-        /// <summary>
-        /// Determines if two vectors are approximately inequal
-        /// </summary>
-        /// <param name="lhs"></param>
-        /// <param name="rhs"></param>
-        /// <returns>True if approximately inequal, false if not</returns>
-        public static bool operator !=(Vector3 lhs, Vector3 rhs)
+        public static bool operator !=(Vector4 lhs, Vector4 rhs)
         {
             return !(lhs == rhs);
         }
@@ -259,13 +131,17 @@ namespace MathLibrary
             hash.Add(x);
             hash.Add(y);
             hash.Add(z);
+            hash.Add(w);
 
             return hash.ToHashCode();
         }
 
+
+
+        //Converts the Vector4 to a string for debugging purposes
         public override string ToString()
         {
-            return x.ToString() + "," + y.ToString() + "," + z.ToString();
+            return x.ToString() + "," + y.ToString() + "," + z.ToString() + "," + w.ToString();
         }
     }
 }
