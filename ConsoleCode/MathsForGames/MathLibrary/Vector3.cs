@@ -1,16 +1,17 @@
-﻿namespace MathLibrary
-{
-    public struct Vector4
-    {
-        public float x, y, z, w;
+﻿using System.Diagnostics.CodeAnalysis;
 
-        //Vector4 Constructor
-        public Vector4(float x, float y, float z, float w)
+namespace MathLibrary
+{
+    public struct Vector3
+    {
+        public float x, y, z;
+
+        //Vector3 Constructor
+        public Vector3(float x, float y, float z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.w = w;
         }
 
         //Calculates the Magnitude
@@ -18,89 +19,113 @@
         {
             get
             {
-                return MathF.Sqrt((x * x) + (y * y) + (z * z) + (w * w));
+                return MathF.Sqrt(x * x + y * y + z * z);
             }
         }
 
-        //Normalizes a Vector4
+        //Normalizes a Vector3
         public void Normalize()
         {
-            this /= Magnitude;
+            float mag = Magnitude;
+            if (mag != 0)
+            {
+                this /= Magnitude;
+            }
         }
 
         //Same thing as Normalize, but returns the value
-        public Vector4 Normalized
+        public Vector3 Normalized
         {
             get
             {
-                return new Vector4(x / Magnitude, y / Magnitude, z / Magnitude, w / Magnitude);
+                return this /= Magnitude;
             }
         }
 
-        //Scales a Vector4
-        public void Scale(Vector4 rhs)
+        //Scales a Vector3
+        public void Scale(Vector3 rhs)
         {
             this.x *= rhs.x;
             this.y *= rhs.y;
             this.z *= rhs.z;
-            this.w *= rhs.w;
         }
 
         //Same thing as Scale, but returns the value
-        public Vector4 Scaled(Vector4 rhs)
+        public Vector3 Scaled(Vector3 rhs)
         {
-            return new Vector4(x * rhs.x, y * rhs.y, z * rhs.z, w * rhs.w);
+            return new Vector3(x * rhs.x, y * rhs.y, z * rhs.z);
         }
 
-        //Calculates the Dot Product for a Vector4
-        public float Dot(Vector4 rhs)
+        //Calculates the Dot Product for a Vector3
+        public float Dot(Vector3 rhs)
         {
-            return ((x * rhs.x) + (y * rhs.y) + (z * rhs.z) + (w * rhs.w));
+            return ((x * rhs.x) + (y * rhs.y) + (z * rhs.z));
         }
 
-        //Calculates the Cross Product for a Vector4
-        public Vector4 Cross(Vector4 rhs)
+        //Calculates the Cross Product for a Vector3
+        public Vector3 Cross(Vector3 rhs)
         {
-            return new Vector4((y * rhs.z) - (rhs.y * z), (z * rhs.x) - (rhs.z * x), (x * rhs.y) - (rhs.x * y), 0);
+            return new Vector3((y * rhs.z) - (rhs.y * z), (z * rhs.x) - (rhs.z * x), (x * rhs.y) - (rhs.x * y));
+        }
+
+
+        //For limiting Magnitude
+        public static Vector3 ClampMagnitude(Vector3 vec, float maxMagnitude)
+        {
+            float curMag = vec.Magnitude;
+
+            if (curMag > maxMagnitude)
+            {
+                return vec.Normalized * maxMagnitude;
+            }
+
+            return vec;
         }
 
         //Multiplcation Operators
-        public static Vector4 operator *(Vector4 lhs, float rhs)
+        public static Vector3 operator *(Vector3 lhs, float rhs)
         {
-            return new Vector4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
+            return new Vector3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
         }
 
-        public static Vector4 operator *(float lhs, Vector4 rhs)
+        public static Vector3 operator *(float lhs, Vector3 rhs)
         {
-            return new Vector4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
+            return new Vector3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
         }
 
         //Division Operator
-        public static Vector4 operator /(Vector4 lhs, float rhs)
+        public static Vector3 operator /(Vector3 lhs, float rhs)
         {
-            return new Vector4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
+            return new Vector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
         }
 
         //Addition Operator
-        public static Vector4 operator +(Vector4 lhs, Vector4 rhs)
+        public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
         {
-            return new Vector4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
+            return new Vector3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
         }
 
         //Subtraction Operators
-        public static Vector4 operator -(Vector4 lhs, Vector4 rhs)
+        public static Vector3 operator -(Vector3 lhs, Vector3 rhs)
         {
-            return new Vector4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
+            return new Vector3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
         }
 
-        public static Vector4 operator -(Vector4 rhs)
+        public static Vector3 operator -(Vector3 rhs)
         {
-            return new Vector4(-rhs.x, -rhs.y, -rhs.z, -rhs.w);
+            return new Vector3(-rhs.x, -rhs.y, -rhs.z);
         }
 
-        public bool Equals(Vector4 other)
+
+        //Equals(Vector3)
+        //Equals(object) - override!
+        // == operator
+        // != operator
+        //GetHashCode()
+
+        public bool Equals(Vector3 other)
         {
-            if (MathF.Abs(x - other.x) < 0.0001 && MathF.Abs(y - other.y) < 0.0001 && MathF.Abs(z - other.z) < 0.0001 && MathF.Abs(w - other.w) < 0.0001)
+            if (MathF.Abs(x - other.x) < 0.0001 && MathF.Abs(y - other.y) < 0.0001 && MathF.Abs(z - other.z) < 0.0001)
             {
                 return true;
             }
@@ -109,17 +134,17 @@
 
         public override bool Equals(object? obj)
         {
-            return obj != null && this.Equals((Vector4)obj);
+            return obj != null && this.Equals((Vector3)obj);
         }
 
 
         //Equals and Not Equals Operators
-        public static bool operator ==(Vector4 lhs, Vector4 rhs)
+        public static bool operator ==(Vector3 lhs, Vector3 rhs)
         {
             return lhs.Equals(rhs);
         }
 
-        public static bool operator !=(Vector4 lhs, Vector4 rhs)
+        public static bool operator !=(Vector3 lhs, Vector3 rhs)
         {
             return !(lhs == rhs);
         }
@@ -131,17 +156,14 @@
             hash.Add(x);
             hash.Add(y);
             hash.Add(z);
-            hash.Add(w);
 
             return hash.ToHashCode();
         }
 
-
-
-        //Converts the Vector4 to a string for debugging purposes
+        //Converts the Vector3 to a string for debugging purposes
         public override string ToString()
         {
-            return x.ToString() + "," + y.ToString() + "," + z.ToString() + "," + w.ToString();
+            return x.ToString() + "," + y.ToString() + "," + z.ToString();
         }
     }
 }

@@ -41,6 +41,20 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "GameFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MathLibrary": "1.0.0",
+          "Raylib-cs": "4.2.0.1"
+        },
+        "compile": {
+          "bin/placeholder/GameFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameFramework.dll": {}
+        }
+      },
       "MathLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -122,6 +136,11 @@
         "version.txt"
       ]
     },
+    "GameFramework/1.0.0": {
+      "type": "project",
+      "path": "../GameFramework/GameFramework.csproj",
+      "msbuildProject": "../GameFramework/GameFramework.csproj"
+    },
     "MathLibrary/1.0.0": {
       "type": "project",
       "path": "../MathLibrary/MathLibrary.csproj",
@@ -130,6 +149,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GameFramework >= 1.0.0",
       "MathLibrary >= 1.0.0",
       "Raylib-cs >= 4.2.0.1"
     ]
@@ -161,6 +181,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\GameFramework\\GameFramework.csproj": {
+              "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\GameFramework\\GameFramework.csproj"
+            },
             "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
               "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
             }
