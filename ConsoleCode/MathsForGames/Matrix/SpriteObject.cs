@@ -39,7 +39,7 @@ namespace Matrix
                 //origin: pivot point: default top left corner, for middle origin: half of destination width/height
                 new System.Numerics.Vector2(origin.x * sprite.width * scale.x, origin.y * sprite.height * scale.y),
                 //rotation              `
-                MathU.AngleFrom2D(GlobalTransform.m1, GlobalTransform.m2) * MathU.RadiansToDegrees,
+                MathUtils.AngleFrom2D(GlobalTransform.m1, GlobalTransform.m2) * MathUtils.RadiansToDegrees,
                 //tint                  `
                 Color.WHITE
                 );

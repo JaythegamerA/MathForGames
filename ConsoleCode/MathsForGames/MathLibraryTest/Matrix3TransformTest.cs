@@ -9,64 +9,93 @@ namespace UnitTestProject
     public class Matrix3TransformTests
     {
         [TestMethod]
-        public void Vector3MatrixTransform()
+        public void Vector3MatrixTranslation()
         {
-            Matrix3 m3b = Matrix3.CreateRotateY(1.76f);
+            // homogeneous point translation
+            Matrix3 m3b = new Matrix3(1, 0, 0,
+                                      0, 1, 0,
+                                      55, 44, 1);
 
-            Vector3 v3a = new Vector3(13.5f, -48.23f, 862);
+            Vector3 v3a = new Vector3(13.5f, -48.23f, 1);
+
             Vector3 v3b = m3b * v3a;
 
-            // https://www.wolframalpha.com/input/?i=%7B+++++%7Bcos%281.76%29%2C+0%2C+-sin%281.76%29%7D%2C+++++%7B0%2C+1%2C+0%7D%2C+++++%7Bsin%281.76%29%2C+0%2C+cos%281.76%29%7D+%7D+*+%7B%7B13.5%7D%2C+%7B-48.23%7D%2C+%7B862%7D%7D
-            Assert.AreEqual(new Vector3(-849.156067f, -48.23f, -148.863144f), v3b);
+            Assert.AreEqual(new Vector3(68.5f, -4.23f, 1), v3b);
         }
 
         [TestMethod]
-        public void Vector3MatrixTransform2()
+        public void Vector3MatrixTranslation2()
         {
-            Matrix3 m3c = Matrix3.CreateRotateZ(9.62f);
+            // homogeneous point translation
+            Matrix3 m3b = new Matrix3(1, 0, 0,
+                                      0, 1, 0,
+                                      55, 44, 1);
 
-            Vector3 v3a = new Vector3(13.5f, -48.23f, 862);
-            Vector3 v3c = m3c * v3a;
+            Vector3 v3a = new Vector3(13.5f, -48.23f, 0);
 
-            // https://www.wolframalpha.com/input/?i=%7B+%7Bcos%289.62%29%2C+sin%289.62%29%2C+0%7D%2C+%7B-sin%289.62%29%2C+cos%289.62%29%2C+0%7D%2C+%7B0%2C+0%2C+1%7D+%7D+*+%7B%7B13.5%7D%2C+%7B-48.23%7D%2C+%7B862%7D%7D
-            Assert.AreEqual(new Vector3(-3.8877f, 49.9326f, 862f), v3c);
+            Vector3 v3b = m3b * v3a;
+
+            Assert.AreEqual(new Vector3(13.5f, -48.23f, 0), v3b);
         }
 
         [TestMethod]
-        public void Matrix3SetRotateX()
+        public void Vector3MatrixTranslationMethod()
+        {
+            // homogeneous point translation
+            Matrix3 m3b = Matrix3.CreateTranslation(55, 44);
+
+            Vector3 v3a = new Vector3(13.5f, -48.23f, 1);
+
+            Vector3 v3b = m3b * v3a;
+
+            Assert.AreEqual(new Vector3(68.5f, -4.23f, 1), v3b);
+        }
+
+        [TestMethod]
+        public void Vector3MatrixTranslationMethod2()
+        {
+            // homogeneous point translation
+            Matrix3 m3b = Matrix3.CreateTranslation(new Vector3(55, 44, 1));
+
+            Vector3 v3a = new Vector3(13.5f, -48.23f, 0);
+
+            Vector3 v3b = m3b * v3a;
+
+            Assert.AreEqual(new Vector3(13.5f, -48.23f, 0), v3b);
+        }
+
+        [TestMethod]
+        public void Matrix3CreateRotateX()
         {
             Matrix3 m3a = Matrix3.CreateRotateX(3.98f);
 
-            // https://www.wolframalpha.com/input/?i=%7B+++++%7B1%2C+0%2C+0%7D%2C+++++%7B0%2C+cos%283.98%29%2C+sin%283.98%29%7D%2C+++++%7B0%2C+-sin%283.98%29%2C+cos%283.98%29%7D+%7D
             Assert.AreEqual(new Matrix3(1, 0, 0,
                             0, -0.668648f, 0.743579f,
                             0, -0.743579f, -0.668648f), m3a);
         }
 
         [TestMethod]
-        public void Matrix3SetRotateY()
+        public void Matrix3CreateRotateY()
         {
             Matrix3 m3b = Matrix3.CreateRotateY(1.76f);
 
-            // https://www.wolframalpha.com/input/?i=%7B+++++%7Bcos%281.76%29%2C+0%2C+-sin%281.76%29%7D%2C+++++%7B0%2C+1%2C+0%7D%2C+++++%7Bsin%281.76%29%2C+0%2C+cos%281.76%29%7D+%7D
             Assert.AreEqual(new Matrix3(-0.188077f, 0, 0.982154f,
                             0, 1, 0,
                             -0.982154f, 0, -0.188077f), m3b);
         }
 
         [TestMethod]
-        public void Matrix3SetRotateZ()
+        public void Matrix3CreateRotateZ()
         {
             Matrix3 m3c = Matrix3.CreateRotateZ(9.62f);
 
-            // https://www.wolframalpha.com/input/?i=%7B+%7Bcos%289.62%29%2C+sin%289.62%29%2C+0%7D%2C+%7B-sin%289.62%29%2C+cos%289.62%29%2C+0%7D%2C+%7B0%2C+0%2C+1%7D+%7D
-            Assert.AreEqual(new Matrix3(-0.981005f, 0.193984f, 0,
-                             -0.193984f, -0.981005f, 0,
+            Assert.AreEqual(new Matrix3(-0.981005f, -0.193984f, 0,
+                             0.193984f, -0.981005f, 0,
                              0, 0, 1), m3c);
         }
 
         [TestMethod]
-        public void Vector3MatrixTranslation2()
+        public void Vector3MatrixCreateRotateZ2()
         {
             // homogeneous point translation
             Matrix3 m3c = Matrix3.CreateRotateZ(2.2f);
@@ -76,11 +105,11 @@ namespace UnitTestProject
 
             Vector3 v3c = m3c * v3a;
 
-            Assert.AreEqual(new Vector3(8.061456f, 61.46871f, 1), v3c);
+            Assert.AreEqual(new Vector3(86.04901f, 83.29811f, 1f), v3c);
         }
 
         [TestMethod]
-        public void Vector3MatrixTranslation4()
+        public void Vector3MatrixCreateRotateZ3()
         {
             // homogeneous point translation
             Matrix3 m3c = Matrix3.CreateRotateZ(2.2f);
@@ -90,7 +119,34 @@ namespace UnitTestProject
 
             Vector3 v3c = m3c * v3a;
 
-            Assert.AreEqual(new Vector3(-46.93855f, 17.46871f, 0), v3c);
+            Assert.AreEqual(new Vector3(31.049013f, 39.29811f, 0), v3c);
+        }
+
+        [TestMethod]
+        public void Matrix3CreateScaleMethod2Param()
+        {
+            Assert.AreEqual(new Matrix3(5.0f, 0.0f, 0.0f,
+                0.0f, 6.3f, 0.0f,
+                0.0f, 0.0f, 1.0f),
+                Matrix3.CreateScale(5.0f, 6.3f));
+        }
+
+        [TestMethod]
+        public void Matrix3CreateScaleMethod3Param()
+        {
+            Assert.AreEqual(new Matrix3(5.0f, 0.0f, 0.0f,
+               0.0f, 6.3f, 0.0f,
+               0.0f, 0.0f, 3.2f),
+               Matrix3.CreateScale(5.0f, 6.3f, 3.2f));
+        }
+
+        [TestMethod]
+        public void Matrix3CreateScaleMethodVectorParam()
+        {
+            Assert.AreEqual(new Matrix3(5.0f, 0.0f, 0.0f,
+                0.0f, 6.3f, 0.0f,
+                0.0f, 0.0f, 3.2f),
+                Matrix3.CreateScale(new Vector3(5.0f, 6.3f, 3.2f)));
         }
     }
 }

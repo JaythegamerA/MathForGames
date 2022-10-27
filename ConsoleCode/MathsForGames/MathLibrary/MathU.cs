@@ -25,5 +25,7 @@
         public const float Deg2Rad = MathF.PI * 2.0f / 360.0f;
 
         public const float Rad2Deg = 1.0f / Deg2Rad;
+
+        public static float RadiansToDegrees { get; set; }
     }
 }
