@@ -50,7 +50,17 @@
       "ProjectGuid": "1c228c26-7b78-4837-a820-6cff6b04d731",
       "DisplayName": "GraphicalTestApplication",
       "ColorIndex": 8
+    },
+    "0e034cb0-75ec-43fe-9e74-48b1c90c1744": {
+      "ProjectGuid": "0e034cb0-75ec-43fe-9e74-48b1c90c1744",
+      "DisplayName": "GameFramework",
+      "ColorIndex": 9
+    },
+    "bdeda436-8d4d-4d47-a297-586f69afd528": {
+      "ProjectGuid": "bdeda436-8d4d-4d47-a297-586f69afd528",
+      "DisplayName": "Color",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 11
 }
