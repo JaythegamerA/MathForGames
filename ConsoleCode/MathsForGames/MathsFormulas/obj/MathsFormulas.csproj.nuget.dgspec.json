@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj": {}
+    "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj": {
+    "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj",
+        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj",
         "projectName": "MathsFormulas",
-        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj",
+        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\MathsFormulas.csproj",
         "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\obj\\",
+        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathsFormulas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -140,11 +140,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
+      "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
       "projectName": "Color",
-      "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
+      "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
       "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\obj\\",
+      "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -161,8 +161,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
-              "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
+            "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
+              "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B2t1yflHGJjiBt+N6M0FEEUv5XueODs52PtTsyHAIewYAy5IdCcR8hjmA0yj2yt3OVrzVE1ryRVaF2J0ZhSJNA==",
+  "dgSpecHash": "jM6ofSaxZKWvnMvHZg0ugA+7IUBuu3gzmNMK4yBzsMT7culd8eZyoBoJf2SN1Noo3gGQca51muZu1WqDzCR3yQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Vectors\\Vectors.csproj",
+  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Vectors\\Vectors.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\s229040\\.nuget\\packages\\raylib-cs\\4.0.0.2\\raylib-cs.4.0.0.2.nupkg.sha512",
     "C:\\Users\\s229040\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {}
+    "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {
+    "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
         "projectName": "Trig",
-        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
         "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\obj\\",
+        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",

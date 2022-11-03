@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xCbU/4ROsQ5zzZOYmJrKsYRbJgzylU0a+CPf8iZN3y/ckv7b7mUy/ajxRxNKBn0Z7LWSrCbaoXoLHVl+zj/1nQ==",
+  "dgSpecHash": "pRJTh3/C12fGcAHfMm3OY1padw22gp/BwzbB7xTtrermAO9/CmT87LQIyhPOVM7Glm/pXQyuxh+xLa1Xg6L2lg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibraryTest\\MathLibraryTest.csproj",
+  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibraryTest\\MathLibraryTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\s229040\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\s229040\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
