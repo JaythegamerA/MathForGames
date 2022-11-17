@@ -26,3 +26,11 @@ C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGam
 C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\ref\GraphicalTestApplication.dll
 C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.pdb
 C:\Users\s229040\Documents\GitHub\introtoc-\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.genruntimeconfig.cache
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.csproj.AssemblyReference.cache
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.AssemblyInfoInputs.cache
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.AssemblyInfo.cs
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.csproj.CoreCompileInputs.cache
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.dll
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\ref\GraphicalTestApplication.dll
+C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.pdb
