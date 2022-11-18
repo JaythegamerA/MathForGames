@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Raylib_cs;
 using MathLibrary;
 using GameFramework;
+using TankProject;
 
 namespace Tanks
 {
@@ -21,9 +22,9 @@ namespace Tanks
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
-            Vector3 bulletOffset = new Vector3();
+            Vector3 ShellOffset = new Vector3();
 
-            bulletOffset = localPosition + direction * 20;
+            ShellOffset = localPosition + direction * 20;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
@@ -36,10 +37,10 @@ namespace Tanks
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-                Bullet bullet = BulletSpawner.SpawnBullet("res/bullet.png");
-                bullet.localPosition = bulletOffset;
-                bullet.localRotation = localRotation * MathUtils.Rad2Deg;
-                bullet.targetDirection = direction;
+                  = BulletSpawner.SpawnBullet("res/Shell.png");
+                Shell.localPosition = ShellOffset;
+                Shell.localRotation = localRotation * MathUtils.Rad2Deg;
+                Shell.targetDirection = direction;
 
                 Program.Instantiate(bullet);
             }

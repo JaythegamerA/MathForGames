@@ -4,7 +4,7 @@ using GameFramework;
 
 namespace TankProject
 {
-    public class Turret : GameObject
+    public class Shell : GameObject
     {
 
         float speed = 40f;
