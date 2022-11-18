@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,13 +8,26 @@ namespace MathLibrary
 {
     public static class CollisionTests
     {
-        public static bool CirclePointTest(Vector3 circlePos, float circleRadius, Vector3 pointPos)
+        public static bool CirclePointTest(Vector3 circlePosition, float circleRadius, Vector3 pointPosition)
         {
-            Vector3 offset = circlePos - pointPos;
-            float dist2 = offset.Dot(offset);
+            
+            Vector3 offset = circlePosition - pointPosition;
+            float distanceSquared = offset.Dot(offset);
 
-            //Compare to radius of circle
-            return dist2 <= circleRadius * circleRadius;
+            return distanceSquared <= circleRadius * circleRadius;
+        }
+
+        public static bool CircleCircleTest(Vector3 circleOnePos, float circleOneR, Vector3 circleTwoPos, float circleTwoR)
+        {
+            //cache the distance between the center of both circles
+            Vector3 centerDeltaDistance = circleOnePos - circleTwoPos;
+            //cache the combined radius
+            float combinedRadii = circleOneR + circleTwoR;
+
+            //check if the distance between the two centers (squared) is less than or equal to the combined radii (squared)
+            return (centerDeltaDistance.Dot(centerDeltaDistance)) <= (combinedRadii * combinedRadii);
         }
     }
+
+
 }
