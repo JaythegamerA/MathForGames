@@ -18,13 +18,13 @@ namespace Tanks
     Texture2D turretSprite = Raylib.LoadTexture("res/turret.png");
         protected override void OnUpdate(float deltaTime)
         {
-            localPosition = parent.localPosition;
+            LocalPosition = parent.LocalPosition;
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
             Vector3 ShellOffset = new Vector3();
 
-            ShellOffset = localPosition + direction * 20;
+            ShellOffset = LocalPosition + direction * 20;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
@@ -37,12 +37,12 @@ namespace Tanks
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-                  = ShellSpawner.SpawnShell("res/Shell.png");
+               Shell shell = ShellSpawner.SpawnShell("res/Shell.png");
                 Shell.LocalPosition = ShellOffset;
                 Shell.LocalRotation = LocalRotation * MathUtils.Rad2Deg;
                 Shell.targetDirection = direction;
 
-                Program.Instantiate(Shell);
+                Program.Instantiate(shell);
             }
         }
 
