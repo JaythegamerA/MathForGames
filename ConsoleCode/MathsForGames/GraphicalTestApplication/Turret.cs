@@ -13,48 +13,47 @@ namespace Tanks
 
     public class TankTurret : SpriteObject
     {
-        private void FireShell()
-        {
-           
-            TankShell newShell = (TankShell)GameObjectFactory.FireShell("res/shell.png");
 
-            
-            newShell.LocalPosition = GlobalTransform.GetTranslation();
-
-            
-            newShell.Translate(GlobalTransform.m1 * this.sprite.width, GlobalTransform.m2 * this.sprite.width);
-
-          
-            newShell.LocalRotation = -MathUtils.AngleFrom2D(GlobalTransform.m1, GlobalTransform.m2);
-            Program.AddProjectile(newShell);
-        }
+    Texture2D turretSprite = Raylib.LoadTexture("res/turret.png");
         protected override void OnUpdate(float deltaTime)
         {
+            localPosition = parent.localPosition;
 
- 
-            float rotationAngle = 0.0f;
-      
-            const float ROTATESPEED = 1f;
+            Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
+
+            Vector3 bulletOffset = new Vector3();
+
+            bulletOffset = localPosition + direction * 20;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
-                rotationAngle += ROTATESPEED * deltaTime;
+                localRotation += 1 * deltaTime;
             }
-
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
+            else if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
             {
-                rotationAngle -= ROTATESPEED * deltaTime;
+                localRotation -= 1 * deltaTime;
             }
 
-
-           
-            Rotate(rotationAngle);
-
-            
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-                FireShell();
+                Bullet bullet = BulletSpawner.SpawnBullet("res/bullet.png");
+                bullet.localPosition = bulletOffset;
+                bullet.localRotation = localRotation * MathUtils.Rad2Deg;
+                bullet.targetDirection = direction;
+
+                Program.Instantiate(bullet);
             }
+        }
+
+        protected override void OnDraw()
+        {
+            Matrix3 myTransform = LocalTransform;
+            Matrix3 tankTransform = GlobalTransform;
+            Vector2 origin = new Vector2(9, 9);
+
+            float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathUtils.Rad2Deg;
+
+            Raylib.DrawTexturePro(turretSprite, new Rectangle(26, 18, 26, 18), new Rectangle(localPosition.x, localPosition.y, 26, 18), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
         }
     }
 }
