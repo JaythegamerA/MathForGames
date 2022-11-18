@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Raylib_cs;
 
 using GameFramework;
+using TankProject;
 
 namespace Tanks
 {
@@ -40,7 +41,7 @@ namespace Tanks
 
         public static GameObject FireShell(string pathToSprite)
         {
-            TankShell newShell = new TankShell();
+            Shell newShell = new Shell();
             if (!File.Exists(pathToSprite))
             {
                 throw new FileNotFoundException("File not found at path: " + pathToSprite);

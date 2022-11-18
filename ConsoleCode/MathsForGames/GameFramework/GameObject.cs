@@ -8,7 +8,7 @@ namespace GameFramework
 
         public Texture2D sprite;
 
-        //Parenting
+       
 
         protected GameObject parent = null;
         public GameObject Parent
@@ -45,13 +45,11 @@ namespace GameFramework
             return children[index];
         }
 
-        //Setting up the values and allowing them to be modified
 
         public Vector3 localPosition { get; set; }
         public float localRotation { get; set; }
         public Vector3 localScale { get; set; } = new Vector3(1, 1, 1);
 
-        //For setting a target direction upon creation (For bullet spawning)
         public Vector3 targetDirection { get; set; }
 
         public Matrix3 LocalTransform
@@ -94,8 +92,6 @@ namespace GameFramework
             localScale += new Vector3(xScaler, yScaler, 0);
         }
 
-
-        //Drawing and updating the object
 
         public void Update(float deltaTime)
         {

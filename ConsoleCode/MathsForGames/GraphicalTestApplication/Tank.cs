@@ -27,9 +27,6 @@ namespace Tanks
                 AddTurret();
             }
 
-            //
-            //  Parameters
-            //
             float moveX = 0.0f;
             float moveY = 0.0f;
             float rotationAngle = 0.0f;

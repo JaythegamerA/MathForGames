@@ -42,7 +42,7 @@ namespace Tanks
                 Shell.localRotation = localRotation * MathUtils.Rad2Deg;
                 Shell.targetDirection = direction;
 
-                Program.Instantiate(bullet);
+                Program.Instantiate(Shell);
             }
         }
 

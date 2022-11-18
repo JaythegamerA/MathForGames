@@ -14,7 +14,7 @@ namespace GraphicalTestApplication
         {
             Shell newShellt = new Shell();
 
-            //The program throws an error if it can't find the bullet sprite
+          
             if (!File.Exists(pathToShellSprite))
             {
                 throw new Exception("File not found at path: " + pathToShellSprite);
