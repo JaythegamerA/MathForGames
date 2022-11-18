@@ -8,7 +8,7 @@ namespace TankProject
     {
 
         float speed = 40f;
-
+        internal Texture2D sprite;
 
         protected override void OnUpdate(float deltaTime)
         {
