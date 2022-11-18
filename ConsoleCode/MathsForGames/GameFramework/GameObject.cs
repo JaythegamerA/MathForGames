@@ -91,7 +91,7 @@ namespace GameFramework
 
         public void Scale(float xScaler, float yScaler)
         {
-            localScale  new System.Numerics.Vector3(xScaler, yScaler, 0);
+            localScale += new System.Numerics.Vector3(xScaler, yScaler, 0);
         }
 
 
