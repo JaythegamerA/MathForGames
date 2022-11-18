@@ -28,18 +28,18 @@ namespace Tanks
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
-                localRotation += 1 * deltaTime;
+                LocalRotation += 1 * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
             {
-                localRotation -= 1 * deltaTime;
+                LocalRotation -= 1 * deltaTime;
             }
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-                  = BulletSpawner.SpawnBullet("res/Shell.png");
-                Shell.localPosition = ShellOffset;
-                Shell.localRotation = localRotation * MathUtils.Rad2Deg;
+                  = ShellSpawner.SpawnShell("res/Shell.png");
+                Shell.LocalPosition = ShellOffset;
+                Shell.LocalRotation = LocalRotation * MathUtils.Rad2Deg;
                 Shell.targetDirection = direction;
 
                 Program.Instantiate(Shell);
@@ -54,7 +54,7 @@ namespace Tanks
 
             float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathUtils.Rad2Deg;
 
-            Raylib.DrawTexturePro(turretSprite, new Rectangle(26, 18, 26, 18), new Rectangle(localPosition.x, localPosition.y, 26, 18), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
+            Raylib.DrawTexturePro(turretSprite, new Rectangle(26, 18, 26, 18), new Rectangle(LocalPosition.x, LocalPosition.y, 26, 18), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
         }
     }
 }
