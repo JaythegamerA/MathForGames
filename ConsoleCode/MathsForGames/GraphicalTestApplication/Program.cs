@@ -1,6 +1,7 @@
 ﻿using Raylib_cs;
 using GameFramework;
 using Tanks;
+using TankProject;
 
 public class Program
 {
@@ -23,7 +24,7 @@ public class Program
     //  used for adding projectiles to the projectile list
     public static void AddProjectile(GameObject newProjectile)
     {
-        pendingProjectiles.Add((TankShell)newProjectile);
+        pendingProjectiles.Add((Shell)newProjectile);
     }
 
     public static void Destroy(GameObject toDestroy)
@@ -37,7 +38,7 @@ public class Program
         const int screenW = 800;
         const int screenH = 450;
 
-        Raylib.InitWindow(screenW, screenH, "Tank Go Brr");
+        Raylib.InitWindow(screenW, screenH, "Tank Projcet");
         Raylib.SetTargetFPS(60);
 
         
@@ -111,7 +112,7 @@ public class Program
 
             foreach (var pending in pendingProjectiles)
             {
-                projectiles.Add((TankShell)pending);
+                projectiles.Add((Shell)pending);
             }
             pendingProjectiles.Clear();
 
