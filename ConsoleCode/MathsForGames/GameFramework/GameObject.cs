@@ -91,11 +91,11 @@ namespace GameFramework
 
         public void Scale(float xScaler, float yScaler)
         {
-            localScale += new System.Numerics.Vector3(xScaler, yScaler, 0);
+            localScale += new Vector3(xScaler, yScaler, 0);
         }
 
 
-        
+        //Drawing and updating the object
 
         public void Update(float deltaTime)
         {

@@ -8,6 +8,7 @@ using Raylib_cs;
 using MathLibrary;
 using GameFramework;
 using TankProject;
+using GraphicalTestApplication;
 
 namespace Tanks
 {
@@ -37,10 +38,10 @@ namespace Tanks
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
-               Shell shell = ShellSpawner.SpawnShell("res/Shell.png");
-                Shell.LocalPosition = ShellOffset;
-                Shell.LocalRotation = LocalRotation * MathUtils.Rad2Deg;
-                Shell.targetDirection = direction;
+                Shell shell = ShellSpawner.SpawnShell("res/bullet.png");
+                shell.LocalPosition = ShellOffset;
+                shell.LocalRotation = LocalRotation * MathUtils.Rad2Deg;
+                shell.targetDirection = direction;
 
                 Program.Instantiate(shell);
             }

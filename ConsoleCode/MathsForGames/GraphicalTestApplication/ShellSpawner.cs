@@ -8,7 +8,7 @@ using TankProject;
 
 namespace GraphicalTestApplication
 {
-    public static class BulletSpawner
+    public static class ShellSpawner
     {
         public static Shell SpawnShell(string pathToShellSprite)
         {
