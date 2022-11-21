@@ -62,6 +62,12 @@ public class Program
             
         }
 
+        foreach (var pending in pendingBullets)
+        {
+            bullets.Add(pending);
+        }
+
+        pendingBullets.Clear();
         Raylib.CloseWindow();
 
         return 0;
