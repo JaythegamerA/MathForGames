@@ -1,76 +1,71 @@
-﻿using Raylib_cs;
-using GameFramework;
+﻿using MathLibrary;
+using Raylib_cs;
 using Tanks;
 using TankProject;
-using MathLibrary;
+
 
 public class Program
 {
 
-    private static List<Shell> bullets = new List<Shell>();
-    private static List<Shell> pendingBullets = new List<Shell>();
+    private static List<Shell> shell = new List<Shell>();
+    private static List<Shell> pendingshell = new List<Shell>();
 
-
-    public static void Instantiate(Shell newBullet)
+    public static void Instantiate(Shell newShell)
     {
-        pendingBullets.Add(newBullet);
+        pendingshell.Add(newShell);
     }
 
-  
     static int Main()
     {
-     
-        const int screenW = 800;
-        const int screenH = 450;
 
-        Raylib.InitWindow(screenW, screenH, "Tank Project");
+        const int screenW = 800;
+        const int screenH = 515;
+
+        Raylib.InitWindow(screenW, screenH, "TankProject");
         Raylib.SetTargetFPS(60);
 
         Tank tank = new Tank();
-        tank.localPosition = new Vector3(100, 100, 10);
+        tank.localPosition = new Vector3(100, 100, 1);
         TankTurret turret = new TankTurret();
         turret.localPosition = tank.localPosition;
 
         turret.Parent = tank;
 
-     
+        
         while (!Raylib.WindowShouldClose())
         {
             tank.Update(Raylib.GetFrameTime());
             turret.Update(Raylib.GetFrameTime());
 
-            foreach (var bullet in bullets)
+            foreach (var shell in shell)
             {
-                bullet.Update(Raylib.GetFrameTime());
+                shell.Update(Raylib.GetFrameTime());
             }
 
-         
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Color.WHITE);
+            Raylib.ClearBackground(Color.GRAY);
 
             tank.Draw();
 
             turret.Draw();
 
-            foreach (var bullet in bullets)
+            foreach (var shell in shell)
             {
-                bullet.Draw();
+                shell.Draw();
             }
 
             Raylib.EndDrawing();
 
-            
+            foreach (var pending in pendingshell)
+            {
+                shell.Add(pending);
+            }
+
+            pendingshell.Clear();
         }
 
-        foreach (var pending in pendingBullets)
-        {
-            bullets.Add(pending);
-        }
-
-        pendingBullets.Clear();
         Raylib.CloseWindow();
 
         return 0;
     }
 }
-
