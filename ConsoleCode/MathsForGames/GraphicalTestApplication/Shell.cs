@@ -18,7 +18,7 @@ namespace TankProject
         }
         protected override void OnDraw()
         {
-            Raylib.DrawTexturePro(sprite, new Rectangle(16, 12, 16, 12), new Rectangle(localPosition.x, localPosition.y, 16, 12), new System.Numerics.Vector2(8, 6), localRotation, Color.WHITE);
+            Raylib.DrawTexturePro(sprite, new Rectangle(16, 12, 16, 12), new Rectangle(localPosition.x, localPosition.y, 16, 12), new System.Numerics.Vector2(8, 6), localRotation, Color.YELLOW);
         }
     }
 

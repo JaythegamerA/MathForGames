@@ -12,7 +12,7 @@ namespace GraphicalTestApplication
     {
         public static Shell SpawnShell(string pathToShellSprite)
         {
-            Shell newShellt = new Shell();
+            Shell newShell = new Shell();
 
           
             if (!File.Exists(pathToShellSprite))
@@ -20,9 +20,9 @@ namespace GraphicalTestApplication
                 throw new Exception("File not found at path: " + pathToShellSprite);
             }
 
-            newShellt.sprite = Raylib.LoadTexture(pathToShellSprite);
+            newShell.sprite = Raylib.LoadTexture(pathToShellSprite);
 
-            return newShellt;
+            return newShell;
         }
     }
 }

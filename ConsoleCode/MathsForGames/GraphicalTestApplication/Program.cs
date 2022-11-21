@@ -26,7 +26,7 @@ public class Program
 
         Tank tank = new Tank();
         tank.localPosition = new Vector3(100, 100, 1);
-        TankTurret turret = new TankTurret();
+        Turret turret = new Turret();
         turret.localPosition = tank.localPosition;
 
         turret.Parent = tank;

@@ -14,7 +14,7 @@ namespace Tanks
     {
 
 
-        public Vector3 origin = new Vector3(0.5f, 0.5f, 0.5f);
+        public Vector3 origin = new Vector3(1.5f, 1.5f, 1.5f);
 
         protected override void OnDraw()
         {
@@ -40,7 +40,7 @@ namespace Tanks
                
                 MathUtils.AngleFrom2D(GlobalTransform.m1, GlobalTransform.m2) * MathUtils.RadiansToDegrees,
               
-                Color.WHITE
+                Color.GOLD
                 );
         }
     }
