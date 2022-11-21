@@ -24,7 +24,7 @@ namespace TankProject
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
-            Vector3.ClampMagnitude(direction, 1);
+
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
             {

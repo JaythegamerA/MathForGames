@@ -1,6 +1,5 @@
 ﻿using MathLibrary;
 using Raylib_cs;
-using Tanks;
 using TankProject;
 
 
@@ -25,7 +24,7 @@ public class Program
         Raylib.SetTargetFPS(60);
 
         Tank tank = new Tank();
-        tank.localPosition = new Vector3(100, 100, 1);
+        tank.localPosition = new Vector3(200, 200, 2);
         Turret turret = new Turret();
         turret.localPosition = tank.localPosition;
 

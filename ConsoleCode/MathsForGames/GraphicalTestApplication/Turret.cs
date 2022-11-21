@@ -21,14 +21,14 @@ namespace TankProject
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_F))
             {
-                localRotation += 1 * deltaTime;
+                localRotation += 4 * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_G))
             {
-                localRotation -= 1 * deltaTime;
+                localRotation -= 4 * deltaTime;
             }
 
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
+            if (Raylib.IsKeyPressed(KeyboardKey.KEY_H))
             {
                 Shell shell = ShellSpawner.SpawnShell("res/bullet.png");
                 shell.localPosition = shellOffset;

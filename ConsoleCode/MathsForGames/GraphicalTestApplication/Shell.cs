@@ -8,9 +8,6 @@ namespace TankProject
     {
 
         float speed = 40f;
-        internal Texture2D sprite;
-        internal Vector3 targetDirection;
-
         protected override void OnUpdate(float deltaTime)
         {
             localPosition += targetDirection * speed * deltaTime;
