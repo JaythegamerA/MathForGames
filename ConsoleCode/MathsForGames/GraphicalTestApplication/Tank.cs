@@ -12,8 +12,8 @@ namespace Tanks
 {
     public class Tank : SpriteObject
     {
-        
-        
+
+        Texture2D tankSprite = Raylib.LoadTexture("res/tankbody.png");
         protected override void OnUpdate(float deltaTime)
         {
             
@@ -35,13 +35,13 @@ namespace Tanks
          
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
             {
-                moveX += MathF.Cos(LocalRotation) * MOVESPEED * deltaTime;
-                moveY -= MathF.Sin(LocalRotation) * MOVESPEED * deltaTime;
+                moveX += MathF.Cos(localRotation) * MOVESPEED * deltaTime;
+                moveY -= MathF.Sin(localRotation) * MOVESPEED * deltaTime;
             }
             if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
             {
-                moveX -= MathF.Cos(LocalRotation) * MOVESPEED * deltaTime;
-                moveY += MathF.Sin(LocalRotation) * MOVESPEED * deltaTime;
+                moveX -= MathF.Cos(localRotation) * MOVESPEED * deltaTime;
+                moveY += MathF.Sin(localRotation) * MOVESPEED * deltaTime;
             }
 
             

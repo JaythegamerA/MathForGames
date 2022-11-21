@@ -19,28 +19,28 @@ namespace Tanks
         Texture2D turretSprite = Raylib.LoadTexture("res/turret.png");
         protected override void OnUpdate(float deltaTime)
         {
-            LocalPosition = parent.LocalPosition;
+            localPosition = parent.localPosition;
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
             Vector3 ShellOffset = new Vector3();
 
-            ShellOffset = LocalPosition + direction * 20;
+            ShellOffset = localPosition + direction * 20;
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_Q))
             {
-                LocalRotation += 1 * deltaTime;
+                localRotation += 1 * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_E))
             {
-                LocalRotation -= 1 * deltaTime;
+                localRotation -= 1 * deltaTime;
             }
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_SPACE))
             {
                 Shell shell = ShellSpawner.SpawnShell("res/bullet.png");
-                shell.LocalPosition = ShellOffset;
-                shell.LocalRotation = LocalRotation * MathUtils.Rad2Deg;
+                shell.localPosition = ShellOffset;
+                shell.localRotation = localRotation * MathUtils.Rad2Deg;
                 shell.targetDirection = direction;
 
                 Program.Instantiate(shell);
@@ -55,7 +55,7 @@ namespace Tanks
 
             float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathUtils.Rad2Deg;
 
-            Raylib.DrawTexturePro(turretSprite, new Rectangle(26, 18, 26, 18), new Rectangle(LocalPosition.x, LocalPosition.y, 26, 18), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
+            Raylib.DrawTexturePro(turretSprite, new Rectangle(26, 18, 26, 18), new Rectangle(localPosition.x, localPosition.y, 26, 18), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
         }
     }
 }

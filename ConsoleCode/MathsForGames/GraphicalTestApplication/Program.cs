@@ -2,118 +2,88 @@
 using GameFramework;
 using Tanks;
 using TankProject;
+using MathLibrary;
 
 public class Program
 {
-    private static List<GameObject> gameObjects = new List<GameObject>();
-    private static List<GameObject> targets = new List<GameObject>();
-    private static List<GameObject> projectiles = new List<GameObject>();
 
-    private static List<GameObject> pendingObjects = new List<GameObject>();
-    private static List<GameObject> pendingProjectiles = new List<GameObject>();
+    private static List<Shell> bullets = new List<Shell>();
+    private static List<Shell> pendingBullets = new List<Shell>();
+    private static List<Shell> killBullets = new List<Shell>();
 
-    private static List<GameObject> killObjects = new List<GameObject>();
-
-
-    //  used for adding game objects to the gameObjects list
-    public static void AddRootGameObject(GameObject newGameObject)
+    public static void Instantiate(Shell newBullet)
     {
-        pendingObjects.Add(newGameObject);
+        pendingBullets.Add(newBullet);
     }
 
-    //  used for adding projectiles to the projectile list
-    public static void AddProjectile(GameObject newProjectile)
+    public static void Destroy(Shell toDestroy)
     {
-        pendingProjectiles.Add((Shell)newProjectile);
+        killBullets.Add(toDestroy);
     }
 
-    public static void Destroy(GameObject toDestroy)
+    static int Main()
     {
-        killObjects.Add(toDestroy);
-    }
-
-    public static int Main()
-    {
-      
-        const int screenW = 800;
+        // Initializing - LOAD THE THINGS
+        const int screenW = 600;
         const int screenH = 450;
 
-        Raylib.InitWindow(screenW, screenH, "Tank Projcet");
+        Raylib.InitWindow(screenW, screenH, "Tank Project");
         Raylib.SetTargetFPS(60);
 
-        
-        bool isPaused = false;
+        Tank tank = new Tank();
+        tank.localPosition = new Vector3(100, 100, 1);
+        TankTurret turret = new TankTurret();
+        turret.localPosition = tank.localPosition;
 
-        gameObjects.Add(GameObjectFactory.MakeTank("res/tankBody.png"));
+        turret.Parent = tank;
 
-
-      
         // Game Loop - PLAY THE GAME
         while (!Raylib.WindowShouldClose())
         {
+            tank.Update(Raylib.GetFrameTime());
+            turret.Update(Raylib.GetFrameTime());
 
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_BACKSPACE))
+            foreach (var bullet in bullets)
             {
-                isPaused = !isPaused;
+                bullet.Update(Raylib.GetFrameTime());
             }
 
-            if (!isPaused)
-            {
-               
-                foreach (var go in gameObjects)
-                {
-                    go.Update(Raylib.GetFrameTime());
-                }
-
-                
-                foreach (var go in projectiles)
-                {
-                    go.Update(Raylib.GetFrameTime());
-                }
-
-                
-                }
-            }
-
-            // Draw GAMEPLAY
+            // Draw Stuff
             Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.WHITE);
 
-            Raylib.ClearBackground(Color.RAYWHITE);
+            tank.Draw();
 
-            foreach (var go in gameObjects)
+            turret.Draw();
+
+            foreach (var bullet in bullets)
             {
-                go.Draw();
+                bullet.Draw();
             }
 
-         
-
-            foreach (var go in projectiles)
-            {
-                go.Draw();
-            }
 
             Raylib.EndDrawing();
-       
-            foreach (var pending in pendingObjects)
+
+            //Destroy Bullets
+            foreach (var kill in killBullets)
             {
-                gameObjects.Add(pending);
+                bullets.Remove(kill);
             }
-            pendingObjects.Clear();
+            killBullets.Clear();
 
-            foreach (var pending in pendingProjectiles)
+            //Process pending bullets
+            foreach (var pending in pendingBullets)
             {
-                projectiles.Add((Shell)pending);
+                bullets.Add(pending);
             }
-            pendingProjectiles.Clear();
 
+            pendingBullets.Clear();
+        }
 
-         Raylib.CloseWindow();
-                return 0;
-    }
+        // Deinitializing - UNLOAD THE THINGS
+        Raylib.CloseWindow();
 
-    internal static void Instantiate(Shell shell)
-    {
-        throw new NotImplementedException();
+        return 0;
     }
 }
 
