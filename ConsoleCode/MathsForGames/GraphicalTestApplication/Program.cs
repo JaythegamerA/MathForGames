@@ -7,11 +7,11 @@ public class Program
 {
 
     private static List<Shell> shell = new List<Shell>();
-    private static List<Shell> pendingshell = new List<Shell>();
+    private static List<Shell> upcomingshell = new List<Shell>();
 
     public static void Instantiate(Shell newShell)
     {
-        pendingshell.Add(newShell);
+        upcomingshell.Add(newShell);
     }
 
     static int Main()
@@ -55,12 +55,12 @@ public class Program
 
             Raylib.EndDrawing();
 
-            foreach (var pending in pendingshell)
+            foreach (var pending in upcomingshell)
             {
                 shell.Add(pending);
             }
 
-            pendingshell.Clear();
+            upcomingshell.Clear();
         }
 
         Raylib.CloseWindow();

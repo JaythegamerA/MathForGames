@@ -21,11 +21,11 @@ namespace TankProject
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_F))
             {
-                localRotation += 4 * deltaTime;
+                localRotation += 3.5f * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_G))
             {
-                localRotation -= 4 * deltaTime;
+                localRotation -= 3.5f * deltaTime;
             }
 
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_H))
