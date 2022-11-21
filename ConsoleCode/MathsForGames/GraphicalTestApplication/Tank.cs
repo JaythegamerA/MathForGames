@@ -10,44 +10,65 @@ using GameFramework;
 
 namespace Tanks
 {
-    public class Tank : SpriteObject
+    public class Tank : GameObject
     {
+        Texture2D tankBody = Raylib.LoadTexture("res/tankBody.png");
+        Vector3 velocity;
+        Vector3 acceleration;
 
-        Texture2D tankSprite = Raylib.LoadTexture("res/tankbody.png");
+        float drag = 1.2f;
+
         protected override void OnUpdate(float deltaTime)
         {
-            
 
-            float moveX = 0.0f;
-            float moveY = 0.0f;
-            float rotationAngle = 0.0f;
-            const float ROTATESPEED = 1f;
-            const float MOVESPEED = 20.0f;
+            float speed = 50f;
+
+            Vector3 moveWish = new Vector3(0, 0, 0);
+
+            Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
+
+            Vector3.ClampMagnitude(direction, 1);
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
             {
-                rotationAngle += ROTATESPEED * deltaTime;
+                localRotation -= 0.2f * deltaTime;
             }
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
+            else if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
             {
-                rotationAngle -= ROTATESPEED * deltaTime;
+                localRotation += 0.2f * deltaTime;
             }
-         
+
             if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
             {
-                moveX += MathF.Cos(localRotation) * MOVESPEED * deltaTime;
-                moveY -= MathF.Sin(localRotation) * MOVESPEED * deltaTime;
+                moveWish += direction + velocity * deltaTime;
             }
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
+            else if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
             {
-                moveX -= MathF.Cos(localRotation) * MOVESPEED * deltaTime;
-                moveY += MathF.Sin(localRotation) * MOVESPEED * deltaTime;
+                moveWish -= direction - velocity * deltaTime;
             }
 
-            
+            moveWish = Vector3.ClampMagnitude(moveWish, 1);
 
-            Translate(moveX, moveY);
-            Rotate(rotationAngle);
+            acceleration = moveWish * speed;
+
+            velocity += acceleration * deltaTime;
+
+            velocity *= 1f - deltaTime * drag;
+
+            localPosition += velocity * deltaTime;
+        }
+
+        protected override void OnDraw()
+        {
+    
+            Matrix3 myTransform = GlobalTransform;
+            Vector3 pos = myTransform.GetTranslation();
+
+            float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathUtils.Rad2Deg;
+
+            Vector2 origin = new Vector2(28, 24);
+
+            Raylib.DrawTexturePro(tankBody, new Rectangle(56f, 48f, 56f, 48f), new Rectangle(localPosition.x, localPosition.y, 56, 48), new System.Numerics.Vector2(origin.x, origin.y), rot, Color.WHITE);
         }
     }
 }

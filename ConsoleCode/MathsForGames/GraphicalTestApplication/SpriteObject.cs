@@ -12,7 +12,7 @@ namespace Tanks
 {
     public class SpriteObject : GameObject
     {
-        public Texture2D sprite;
+
 
         public Vector3 origin = new Vector3(0.5f, 0.5f, 0.5f);
 

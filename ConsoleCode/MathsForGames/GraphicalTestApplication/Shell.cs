@@ -15,10 +15,6 @@ namespace TankProject
         {
             localPosition += targetDirection * speed * deltaTime;
 
-            if (localPosition.x < 0 || localPosition.y < 0 || localPosition.x > 800 || localPosition.y > 450)
-            {
-                Program.Destroy(this);
-            }
         }
         protected override void OnDraw()
         {
