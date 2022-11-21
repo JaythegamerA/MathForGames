@@ -24,7 +24,7 @@ public class Program
     static int Main()
     {
         // Initializing - LOAD THE THINGS
-        const int screenW = 600;
+        const int screenW = 800;
         const int screenH = 450;
 
         Raylib.InitWindow(screenW, screenH, "Tank Project");
