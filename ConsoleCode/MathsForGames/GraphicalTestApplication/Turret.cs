@@ -16,7 +16,7 @@ namespace Tanks
     public class TankTurret : SpriteObject
     {
 
-    Texture2D turretSprite = Raylib.LoadTexture("res/turret.png");
+        Texture2D turretSprite = Raylib.LoadTexture("res/turret.png");
         protected override void OnUpdate(float deltaTime)
         {
             LocalPosition = parent.LocalPosition;

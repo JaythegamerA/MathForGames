@@ -16,10 +16,7 @@ namespace Tanks
         
         protected override void OnUpdate(float deltaTime)
         {
-            if (ChildCount == 0)
-            {
-                
-            }
+            
 
             float moveX = 0.0f;
             float moveY = 0.0f;

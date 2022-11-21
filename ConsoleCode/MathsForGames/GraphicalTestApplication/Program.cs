@@ -93,16 +93,6 @@ public class Program
             }
 
             Raylib.EndDrawing();
-
-            
-            foreach (var kill in killObjects)
-            {
-                gameObjects.Remove(kill);
-                targets.Remove(kill);
-                projectiles.Remove(kill);
-            }
-            killObjects.Clear();
-
        
             foreach (var pending in pendingObjects)
             {
