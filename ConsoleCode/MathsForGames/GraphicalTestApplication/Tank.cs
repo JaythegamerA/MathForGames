@@ -13,18 +13,12 @@ namespace Tanks
     public class Tank : SpriteObject
     {
         
-        private void AddTurret()
-        {
-            TankTurret turret = (TankTurret)GameObjectFactory.MakeTurret("res/turret.png");
-            
-            
-            turret.LocalPosition = LocalPosition;
-        }
+        
         protected override void OnUpdate(float deltaTime)
         {
             if (ChildCount == 0)
             {
-                AddTurret();
+                
             }
 
             float moveX = 0.0f;
