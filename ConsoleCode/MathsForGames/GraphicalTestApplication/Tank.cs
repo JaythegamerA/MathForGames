@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Raylib_cs;
+﻿using Raylib_cs;
 using MathLibrary;
 using GameFramework;
 
-namespace Tanks
+namespace TankProject
 {
     public class Tank : GameObject
     {
+       
         Texture2D tankBody = Raylib.LoadTexture("res/tankBody.png");
+
         Vector3 velocity;
         Vector3 acceleration;
 
-        float drag = 1.2f;
+        float drag = 1.5f;
 
+     
         protected override void OnUpdate(float deltaTime)
         {
 
-            float speed = 50f;
+            float speed = 20f;
 
             Vector3 moveWish = new Vector3(0, 0, 0);
 
@@ -60,7 +57,6 @@ namespace Tanks
 
         protected override void OnDraw()
         {
-    
             Matrix3 myTransform = GlobalTransform;
             Vector3 pos = myTransform.GetTranslation();
 
