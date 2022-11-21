@@ -51,7 +51,7 @@ public class Program
         // Game Loop - PLAY THE GAME
         while (!Raylib.WindowShouldClose())
         {
-            // Update GAMEPLAY
+
             if (Raylib.IsKeyPressed(KeyboardKey.KEY_BACKSPACE))
             {
                 isPaused = !isPaused;
@@ -103,7 +103,7 @@ public class Program
             }
             killObjects.Clear();
 
-            // Add all objects that are waiting to be alive
+       
             foreach (var pending in pendingObjects)
             {
                 gameObjects.Add(pending);
