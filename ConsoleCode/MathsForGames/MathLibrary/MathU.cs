@@ -1,6 +1,6 @@
 ﻿namespace MathLibrary
 {
-    public static class MathUtils
+    public static class MathU
     {
 
         public const float DefaultTolerance = 0.0001f;

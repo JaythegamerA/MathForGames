@@ -12,7 +12,7 @@ namespace TankProject
         Vector3 velocity;
         Vector3 acceleration;
 
-        float drag = 5.5f;
+       
 
      
         protected override void OnUpdate(float deltaTime)
@@ -44,13 +44,13 @@ namespace TankProject
                 moveWish -= direction - velocity * deltaTime;
             }
 
-            moveWish = Vector3.ClampMagnitude(moveWish, 1);
+            moveWish = Vector3.ClampMagnitude(moveWish, 2);
 
             acceleration = moveWish * speed;
 
             velocity += acceleration * deltaTime;
 
-            velocity *= 1f - deltaTime * drag;
+            velocity *= 1f - deltaTime;
 
             localPosition += velocity * deltaTime;
         }
@@ -60,7 +60,7 @@ namespace TankProject
             Matrix3 myTransform = GlobalTransform;
             Vector3 pos = myTransform.GetTranslation();
 
-            float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathUtils.Rad2Deg;
+            float rot = MathF.Atan2(myTransform.m2, myTransform.m1) * MathU.Rad2Deg;
 
             Vector2 origin = new Vector2(28, 24);
 

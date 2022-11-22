@@ -18,9 +18,9 @@ public class Program
     {
 
         const int screenW = 800;
-        const int screenH = 515;
+        const int screenH = 450;
 
-        Raylib.InitWindow(screenW, screenH, "TankProject");
+        Raylib.InitWindow(screenW*2, screenH*2, "TankProject");
         Raylib.SetTargetFPS(60);
 
         Tank tank = new Tank();
@@ -33,6 +33,8 @@ public class Program
         
         while (!Raylib.WindowShouldClose())
         {
+           
+
             tank.Update(Raylib.GetFrameTime());
             turret.Update(Raylib.GetFrameTime());
 
