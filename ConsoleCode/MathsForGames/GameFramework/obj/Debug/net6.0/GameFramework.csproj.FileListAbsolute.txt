@@ -44,3 +44,26 @@ C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFra
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\ref\GameFramework.dll
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.pdb
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.genruntimeconfig.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\GameFramework.exe
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\GameFramework.deps.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\GameFramework.runtimeconfig.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\GameFramework.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\GameFramework.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\Raylib-cs.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\runtimes\osx-x64\native\libraylib.dylib
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\runtimes\win-x86\native\raylib.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\MathLibrary.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\bin\Debug\net6.0\MathLibrary.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.csproj.AssemblyReference.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.AssemblyInfoInputs.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.AssemblyInfo.cs
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.csproj.CopyComplete
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\refint\GameFramework.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\GameFramework.genruntimeconfig.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GameFramework\obj\Debug\net6.0\ref\GameFramework.dll

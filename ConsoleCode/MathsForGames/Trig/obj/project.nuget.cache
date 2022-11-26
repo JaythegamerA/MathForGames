@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RLq0G6l+3TN6QT+mhl3OgdCJzSj2MFQG21j0X0JRD7/GD/OkazLuO+srHjLVnNzbNZTjUVQx7uiCesl/w/DNjQ==",
+  "dgSpecHash": "7E+JsGRCuO4GYn4izCGDxpGUfFWO680CRzB2VIMBLpvQmRM9mjMCHPSZDnhvimgpmMZR7HS/vZ5KbCNmu8n5WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+  "projectFilePath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\s229040\\.nuget\\packages\\raylib-cs\\4.0.0.2\\raylib-cs.4.0.0.2.nupkg.sha512",
-    "C:\\Users\\s229040\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Jonathan Arzate\\.nuget\\packages\\raylib-cs\\4.0.0.2\\raylib-cs.4.0.0.2.nupkg.sha512",
+    "C:\\Users\\Jonathan Arzate\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

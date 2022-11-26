@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj": {}
+    "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj": {
+    "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
         "projectName": "Color",
-        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
-        "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\Color.csproj",
+        "packagesPath": "C:\\Users\\Jonathan Arzate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Color\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan Arzate\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
-                "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
+              "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
+                "projectPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj"
               }
             }
           }
@@ -55,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,21 +65,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
+    "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj",
         "projectName": "MathLibrary",
-        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj",
-        "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\MathLibrary.csproj",
+        "packagesPath": "C:\\Users\\Jonathan Arzate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\MathLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan Arzate\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,7 +110,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -118,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

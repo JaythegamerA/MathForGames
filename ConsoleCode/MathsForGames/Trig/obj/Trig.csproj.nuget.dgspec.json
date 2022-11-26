@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {}
+    "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {}
   },
   "projects": {
-    "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {
+    "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
         "projectName": "Trig",
-        "projectPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
-        "packagesPath": "C:\\Users\\s229040\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\s229040\\Documents\\GitHub\\introtoc-\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\Trig.csproj",
+        "packagesPath": "C:\\Users\\Jonathan Arzate\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan Arzate\\OneDrive\\Documents\\GitHub\\MathForGames\\ConsoleCode\\MathsForGames\\Trig\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\s229040\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan Arzate\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

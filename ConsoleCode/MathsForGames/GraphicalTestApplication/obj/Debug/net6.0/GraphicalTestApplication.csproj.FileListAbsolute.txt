@@ -34,3 +34,31 @@ C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\Graphic
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.dll
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\ref\GraphicalTestApplication.dll
 C:\Users\s229040\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GameFramework.deps.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GameFramework.runtimeconfig.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GameFramework.exe
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GraphicalTestApplication.exe
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GraphicalTestApplication.deps.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GraphicalTestApplication.runtimeconfig.json
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GraphicalTestApplication.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GraphicalTestApplication.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\Raylib-cs.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\runtimes\osx-x64\native\libraylib.dylib
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\runtimes\win-x86\native\raylib.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GameFramework.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\MathLibrary.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\GameFramework.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\bin\Debug\net6.0\MathLibrary.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.csproj.AssemblyReference.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.AssemblyInfoInputs.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.AssemblyInfo.cs
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.csproj.CopyComplete
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\refint\GraphicalTestApplication.dll
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.pdb
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\GraphicalTestApplication.genruntimeconfig.cache
+C:\Users\Jonathan Arzate\OneDrive\Documents\GitHub\MathForGames\ConsoleCode\MathsForGames\GraphicalTestApplication\obj\Debug\net6.0\ref\GraphicalTestApplication.dll
