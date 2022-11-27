@@ -1,6 +1,7 @@
 ﻿using Raylib_cs;
 using MathLibrary;
 using GameFramework;
+using System.Threading;
 
 namespace TankProject
 {
@@ -24,15 +25,19 @@ namespace TankProject
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
-
+            float moveX = 0.0f;
+            float moveY = 0.0f;
+            float rotationAngle = 0.0f;
+            const float ROTATESPEED = 3.5f;
+          
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
             {
-                localRotation -= 0.5f * deltaTime;
+                 rotationAngle -= ROTATESPEED * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
             {
-                localRotation += 0.5f * deltaTime;
+               rotationAngle += ROTATESPEED * deltaTime;
             }
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_UP))
@@ -53,6 +58,9 @@ namespace TankProject
             velocity *= 1f - deltaTime;
 
             localPosition += velocity * deltaTime;
+
+            Translate(moveX, moveY);
+            Rotate(rotationAngle);
         }
 
         protected override void OnDraw()
