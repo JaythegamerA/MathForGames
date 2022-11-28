@@ -11,15 +11,11 @@ namespace TankProject
         Texture2D tankBody = Raylib.LoadTexture("res/tankBody.png");
 
         Vector3 velocity;
-        Vector3 acceleration;
-
-       
-
-     
         protected override void OnUpdate(float deltaTime)
         {
 
-              Vector3 moveWish = new Vector3(0, 0, 0);
+  
+            Vector3 moveWish = new Vector3(0, 0, 0);
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
