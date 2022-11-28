@@ -29,7 +29,8 @@ namespace TankProject
             float moveY = 0.0f;
             float rotationAngle = 0.0f;
             const float ROTATESPEED = 3.5f;
-          
+            const float MOVESPEED = 20.0f;
+
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
             {
@@ -42,20 +43,16 @@ namespace TankProject
 
             if (Raylib.IsKeyDown(KeyboardKey.KEY_UP))
             {
-                moveWish += direction + velocity * deltaTime;
+                moveX += MathF.Cos(localRotation) * MOVESPEED * deltaTime;
+                moveY -= MathF.Sin(localRotation) * MOVESPEED * deltaTime;
             }
             else if (Raylib.IsKeyDown(KeyboardKey.KEY_DOWN))
             {
-                moveWish -= direction - velocity * deltaTime;
+                moveX -= MathF.Cos(localRotation) * MOVESPEED * deltaTime;
+                moveY += MathF.Sin(localRotation) * MOVESPEED * deltaTime;
             }
 
             moveWish = Vector3.ClampMagnitude(moveWish, 2);
-
-            acceleration = moveWish * speed;
-
-            velocity += acceleration * deltaTime;
-
-            velocity *= 1f - deltaTime;
 
             localPosition += velocity * deltaTime;
 
