@@ -19,9 +19,7 @@ namespace TankProject
         protected override void OnUpdate(float deltaTime)
         {
 
-            float speed = 85f;
-
-            Vector3 moveWish = new Vector3(0, 0, 0);
+              Vector3 moveWish = new Vector3(0, 0, 0);
 
             Vector3 direction = new Vector3(LocalTransform.m1, LocalTransform.m2, 0);
 
